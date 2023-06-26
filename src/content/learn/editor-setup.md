@@ -22,7 +22,7 @@ title: એડિટર સેટઅપ
 React સમુદાયમાં વપરાતા અન્ય લોકપ્રિય ટેક્સ્ટ એડિટરો માં નીચેના એડિટરો નો સમાવેશ થાય છે:
 
 * [WebStorm](https://www.jetbrains.com/webstorm/) એક integrated development environment છે જે ખાસ કરીને જાવાસ્ક્રિપ્ટ માટે રચાયેલ છે.
-* [Sublime Text](https://www.sublimetext.com/) JSX અને TypeScript સપોર્ટ કરે છે,[સિન્ટેક્સ હાઇલાઇટિંગ](https://stackoverflow.com/a/70960574/458193) અને સ્વતઃપૂર્ણ બિલ્ટ ઇન માટે સપોર્ટ ધરાવે છે.
+* [Sublime Text](https://www.sublimetext.com/) JSX અને TypeScript સપોર્ટ કરે છે,[સિન્ટેક્સ હાઇલાઇટિંગ](https://stackoverflow.com/a/70960574/458193) અને autocomplete બિલ્ટ ઇન માટે સપોર્ટ ધરાવે છે.
 * [Vim](https://www.vim.org/) એ અત્યંત કોન્ફિગરેબલ ટેક્સ્ટ એડિટર છે જે કોઈપણ પ્રકારના ટેક્સ્ટને ખૂબ જ કાર્યક્ષમ બનાવવા અને બદલવા માટે બનાવવામાં આવ્યું છે. તે મોટાભાગની UNIX સિસ્ટમો અને Apple OS X સાથે vi તરીકે સમાવિષ્ટ છે.
 
 ## ટેક્સ્ટ એડિટર ની સુવિધાવો માટેની ભલામણ {/*recommended-text-editor-features*/}
