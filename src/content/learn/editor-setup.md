@@ -40,7 +40,11 @@ React સમુદાયમાં વપરાતા અન્ય લોકપ�
 
 ### ફોર્મેટિંગ {/*formatting*/}
 
+<<<<<<< HEAD
 અન્ય યોગદાનકર્તા સાથે તમારો કોડ શેર કરતી વખતે તમે જે છેલ્લું કામ કરવા માંગો છો તે છે [tabs vs spaces](https://www.google.com/search?q=tabs+vs+spaces) વિશે ચર્ચામાં આવવું! સદનસીબે, [Prettier](https://prettier.io/) તમારા કોડને પ્રીસેટ, ગોઠવણી કરી શકાય તેવા નિયમોને અનુરૂપ થવા માટે તેને ફરીથી ફોર્મેટ કરીને સાફ કરશે. Prettier ચલાવો, અને તમારી બધી ટેબ્સ સ્પેસમાં રૂપાંતરિત થઈ જશે અને તમારું ઇન્ડેન્ટેશન, અવતરણ વગેરે પણ ગોઠવણીને અનુરૂપ થવા માટે બદલાઈ જશે. આદર્શ સેટઅપમાં, જ્યારે તમે તમારી ફાઇલ સેવ કરશો ત્યારે Prettier ચાલશે, તમારા માટે આ ફેરફારો ઝડપથી કરશે.
+=======
+The last thing you want to do when sharing your code with another contributor is get into a discussion about [tabs vs spaces](https://www.google.com/search?q=tabs+vs+spaces)! Fortunately, [Prettier](https://prettier.io/) will clean up your code by reformatting it to conform to preset, configurable rules. Run Prettier, and all your tabs will be converted to spaces—and your indentation, quotes, etc will also all be changed to conform to the configuration. In the ideal setup, Prettier will run when you save your file, quickly making these edits for you.
+>>>>>>> 97489434323b0c4cce78588cd0f48e3808e0eba4
 
 તમે આ પગલાંને અનુસરીને [VSCode માં Prettier એક્સટેન્શન](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) ઇન્સ્ટોલ કરી શકો છો:
 
