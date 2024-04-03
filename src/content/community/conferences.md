@@ -60,7 +60,9 @@ October 20 & 23, 2023. In-person in London, UK + remote first interactivity (hyb
 ### React Brussels 2023 {/*react-brussels-2023*/}
 October 13th 2023. In-person in Brussels, Belgium + Remote (hybrid)
 
+
 [Website](https://www.react.brussels/) - [Twitter](https://twitter.com/BrusselsReact) - [Videos](https://www.youtube.com/playlist?list=PL53Z0yyYnpWh85KeMomUoVz8_brrmh_aC) 
+
 
 ### React India 2023 {/*react-india-2023*/}
 October 5 - 7, 2023. In-person in Goa, India (hybrid event) + Oct 3 2023 - remote day
