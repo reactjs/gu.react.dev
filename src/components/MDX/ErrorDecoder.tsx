@@ -29,7 +29,6 @@ const urlRegex = () =>
 // When the message contains a URL (like https://fb.me/react-refs-must-have-owner),
 // make it a clickable link.
 function urlify(str: string): React.ReactNode[] {
-
   const segments = str.split(urlRegex());
 
   return segments.map((message, i) => {
