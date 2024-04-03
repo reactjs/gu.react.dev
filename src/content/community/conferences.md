@@ -38,9 +38,6 @@ July 04 & 05, 2024. Bangalore, India (In-person event)
 ### React India 2024 {/*react-india-2024*/}
 October 17 - 19, 2024. In-person in Goa, India (hybrid event) + Oct 15 2024 - remote day
 
-### React Day Berlin 2023 {/*react-day-berlin-2023*/}
-December 8 & 12, 2023. In-person in Berlin, Germany + remote first interactivity (hybrid event)
-
 ## Past Conferences {/*past-conferences*/}
 
 ### React Day Berlin 2023 {/*react-day-berlin-2023*/}
@@ -52,9 +49,6 @@ December 8 & 12, 2023. In-person in Berlin, Germany + remote first interactivity
 November 13 & 15, 2023. In-person in New York, US + remote first interactivity (hybrid event)
 
 [Website](https://reactsummit.us) - [Twitter](https://twitter.com/reactsummit) - [Facebook](https://www.facebook.com/reactamsterdam) - [Videos](https://portal.gitnation.org/events/react-summit-us-2023)
-
-### React Brussels 2023 {/*react-brussels-2023*/}
-October 13th 2023. In-person in Brussels, Belgium + Remote (hybrid)
 
 
 ### React Advanced 2023 {/*react-advanced-2023*/}
