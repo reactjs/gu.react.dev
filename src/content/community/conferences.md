@@ -61,11 +61,6 @@ November 13 & 15, 2023. In-person in New York, US + remote first interactivity (
 
 [Website](https://reactsummit.us) - [Twitter](https://twitter.com/reactsummit) - [Facebook](https://www.facebook.com/reactamsterdam) - [Videos](https://portal.gitnation.org/events/react-summit-us-2023)
 
-### React Brussels 2023 {/*react-brussels-2023*/}
-October 13th 2023. In-person in Brussels, Belgium + Remote (hybrid)
-
-[Website](https://www.react.brussels/) - [Twitter](https://twitter.com/BrusselsReact) - [Videos](https://www.youtube.com/playlist?list=PL53Z0yyYnpWh85KeMomUoVz8_brrmh_aC) 
-
 ### React Advanced 2023 {/*react-advanced-2023*/}
 October 20 & 23, 2023. In-person in London, UK + remote first interactivity (hybrid event)
 
