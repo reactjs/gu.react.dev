@@ -18,6 +18,7 @@ function replaceArgs(
 /**
  * Sindre Sorhus <https://sindresorhus.com>
  * Released under MIT license
+ 
  * https://github.com/sindresorhus/linkify-urls/blob/b2397096df152e2f799011f7a48e5f73b4bf1c7e/index.js#L5C1-L7C1
  *
  * The regex is used to extract URL from the string for linkify.
