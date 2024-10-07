@@ -90,7 +90,7 @@ To test the render output of a component, wrap the render inside `act()`:
 
 ```js  {10,12}
 import {act} from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOMClient from 'react-dom/client';
 import Counter from './Counter';
 
 it('can render and update a counter', async () => {
@@ -99,7 +99,7 @@ it('can render and update a counter', async () => {
   
   // ✅ Render the component inside act().
   await act(() => {
-    ReactDOM.createRoot(container).render(<Counter />);
+    ReactDOMClient.createRoot(container).render(<Counter />);
   });
   
   const button = container.querySelector('button');
@@ -109,7 +109,7 @@ it('can render and update a counter', async () => {
 });
 ```
 
-Here, wwe create a container, append it to the document, and render the `Counter` component inside `act()`. This ensures that the component is rendered and its effects are applied before making assertions.
+Here, we create a container, append it to the document, and render the `Counter` component inside `act()`. This ensures that the component is rendered and its effects are applied before making assertions.
 
 Using `act` ensures that all updates have been applied before we make assertions.
 
@@ -119,7 +119,7 @@ To test events, wrap the event dispatch inside `act()`:
 
 ```js {14,16}
 import {act} from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOMClient from 'react-dom/client';
 import Counter from './Counter';
 
 it.only('can render and update a counter', async () => {
