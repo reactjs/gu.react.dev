@@ -70,7 +70,13 @@ We expect most apps will not be affected since the transform is enabled in most 
 To install the latest version of React and React DOM:
 
 ```bash
-npm install react@rc react-dom@rc
+npm install --save-exact react@rc react-dom@rc
+```
+
+Or, if you're using Yarn:
+
+```bash
+yarn add --exact react@rc react-dom@rc
 ```
 
 If you're using TypeScript, you also need to update the types. Once React 19 is released as stable, you can install the types as usual from `@types/react` and `@types/react-dom`.  Until the stable release, the types are available in different packages which need to be enforced in your `package.json`:
@@ -347,7 +353,7 @@ npm install react-shallow-renderer --save-dev
 
 ##### Please reconsider shallow rendering {/*please-reconsider-shallow-rendering*/}
 
-Shallow rendering depends on React internals and can block you from future upgrades. We recommend migrating your tests to [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro/) or [@testing-library/react-native](https://callstack.github.io/react-native-testing-library/docs/getting-started). 
+Shallow rendering depends on React internals and can block you from future upgrades. We recommend migrating your tests to [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro/) or [@testing-library/react-native](https://testing-library.com/docs/react-native-testing-library/intro). 
 
 </Note>
 
@@ -518,7 +524,7 @@ We are deprecating `react-test-renderer` because it implements its own renderer 
 
 The test renderer was created before there were more viable testing strategies available like [React Testing Library](https://testing-library.com), and we now recommend using a modern testing library instead.
 
-In React 19, `react-test-renderer` logs a deprecation warning, and has switched to concurrent rendering. We recommend migrating your tests to [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro/) or [@testing-library/react-native](https://callstack.github.io/react-native-testing-library/docs/getting-started) for a modern and well supported testing experience.
+In React 19, `react-test-renderer` logs a deprecation warning, and has switched to concurrent rendering. We recommend migrating your tests to [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro/) or [@testing-library/react-native](https://testing-library.com/docs/react-native-testing-library/intro) for a modern and well supported testing experience.
 
 ## Notable changes {/*notable-changes*/}
 
