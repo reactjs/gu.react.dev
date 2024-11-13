@@ -4,7 +4,7 @@ title: startTransition
 
 <Intro>
 
-`startTransition` lets you update the state without blocking the UI.
+`startTransition` તમને UI ને અવરોધિત કર્યા વિના સ્ટેટ અપડેટ કરવા દે છે.
 
 ```js
 startTransition(scope)
@@ -16,11 +16,11 @@ startTransition(scope)
 
 ---
 
-## Reference {/*reference*/}
+## સંદર્ભ {/*reference*/}
 
 ### `startTransition(scope)` {/*starttransitionscope*/}
 
-The `startTransition` function lets you mark a state update as a Transition.
+`startTransition` ફંક્શન તમને સ્ટેટ અપડેટને ટ્રાન્ઝિશન તરીકે ચિહ્નિત કરવા દે છે.
 
 ```js {7,9}
 import { startTransition } from 'react';
@@ -37,37 +37,37 @@ function TabContainer() {
 }
 ```
 
-[See more examples below.](#usage)
+[નીચે વધુ ઉદાહરણો જુઓ.](#usage)
 
-#### Parameters {/*parameters*/}
+#### પેરામીટર્સ {/*parameters*/}
 
-* `scope`: A function that updates some state by calling one or more [`set` functions.](/reference/react/useState#setstate) React immediately calls `scope` with no arguments and marks all state updates scheduled synchronously during the `scope` function call as Transitions. They will be [non-blocking](/reference/react/useTransition#marking-a-state-update-as-a-non-blocking-transition) and [will not display unwanted loading indicators.](/reference/react/useTransition#preventing-unwanted-loading-indicators)
+* `scope`: એક ફંક્શન જે એક અથવા વધુ [`set` ફંક્શન્સ](/reference/react/useState#setstate) ને કૉલ કરીને કેટલીક સ્ટેટ અપડેટ કરે છે. રિએક્ટ તરત જ `scope` ને કોઈ આર્ગ્યુમેન્ટ્સ વિના કૉલ કરે છે અને `scope` ફંક્શન કૉલ દરમિયાન સિંક્રોનસલી શેડ્યૂલ કરેલા બધા સ્ટેટ અપડેટ્સને ટ્રાન્ઝિશન્સ તરીકે ચિહ્નિત કરે છે. તેઓ [અવરોધક નથી](/reference/react/useTransition#marking-a-state-update-as-a-non-blocking-transition) અને [અવાંછિત લોડિંગ સૂચકો બતાવશે નહીં.](/reference/react/useTransition#preventing-unwanted-loading-indicators)
 
-#### Returns {/*returns*/}
+#### પરત આપે છે {/*returns*/}
 
-`startTransition` does not return anything.
+`startTransition` કંઈ પણ પરત આપતું નથી.
 
-#### Caveats {/*caveats*/}
+#### ચેતવણીઓ {/*caveats*/}
 
-* `startTransition` does not provide a way to track whether a Transition is pending. To show a pending indicator while the Transition is ongoing, you need [`useTransition`](/reference/react/useTransition) instead.
+* `startTransition` એ ટ્રાન્ઝિશન પેન્ડિંગ છે કે નહીં તે ટ્રેક કરવાની રીત પૂરી પાડતું નથી. ટ્રાન્ઝિશન ચાલુ હોય ત્યારે પેન્ડિંગ સૂચક બતાવવા માટે, તમને [`useTransition`](/reference/react/useTransition) ની જરૂર પડશે.
 
-* You can wrap an update into a Transition only if you have access to the `set` function of that state. If you want to start a Transition in response to some prop or a custom Hook return value, try [`useDeferredValue`](/reference/react/useDeferredValue) instead.
+* તમે કોઈ સ્ટેટના `set` ફંક્શનની ઍક્સેસ ધરાવો છો તો જ તમે અપડેટને ટ્રાન્ઝિશનમાં લપેટી શકો છો. જો તમે કોઈ પ્રોપ અથવા કસ્ટમ હુક રિટર્ન વેલ્યુના પ્રતિસાદમાં ટ્રાન્ઝિશન શરૂ કરવા માંગો છો, તો [`useDeferredValue`](/reference/react/useDeferredValue) અજમાવો.
 
-* The function you pass to `startTransition` must be synchronous. React immediately executes this function, marking all state updates that happen while it executes as Transitions. If you try to perform more state updates later (for example, in a timeout), they won't be marked as Transitions.
+* તમે `startTransition` ને પાસ કરેલું ફંક્શન સિંક્રોનસ હોવું જોઈએ. રિએક્ટ તરત જ આ ફંક્શનને એક્ઝિક્યુટ કરે છે, જે દરમિયાન થતા બધા સ્ટેટ અપડેટ્સને ટ્રાન્ઝિશન્સ તરીકે ચિહ્નિત કરે છે. જો તમે પછીથી વધુ સ્ટેટ અપડેટ્સ કરવાનો પ્રયાસ કરો (ઉદાહરણ તરીકે, ટાઈમઆઉટમાં), તેઓ ટ્રાન્ઝિશન્સ તરીકે ચિહ્નિત નહીં થાય.
 
-* A state update marked as a Transition will be interrupted by other state updates. For example, if you update a chart component inside a Transition, but then start typing into an input while the chart is in the middle of a re-render, React will restart the rendering work on the chart component after handling the input state update.
+* ટ્રાન્ઝિશન તરીકે ચિહ્નિત સ્ટેટ અપડેટને અન્ય સ્ટેટ અપડેટ્સ દ્વારા વિચ્છેદિત કરી શકાય છે. ઉદાહરણ તરીકે, જો તમે ટ્રાન્ઝિશનમાં ચાર્ટ કમ્પોનેન્ટને અપડેટ કરો, પરંતુ પછી ચાર્ટનું રી-રેન્ડર ચાલુ હોય ત્યારે ઇનપુટમાં ટાઈપ કરવા માંડો, તો રિએક્ટ ઇનપુટ સ્ટેટ અપડેટને સંભાળ્યા પછી ચાર્ટ કમ્પોનેન્ટ પર રેન્ડરિંગ કામને ફરીથી શરૂ કરશે.
 
-* Transition updates can't be used to control text inputs.
+* ટ્રાન્ઝિશન અપડેટ્સનો ઉપયોગ ટેક્સ્ટ ઇનપુટ્સને નિયંત્રિત કરવા માટે ન કરી શકાય.
 
-* If there are multiple ongoing Transitions, React currently batches them together. This is a limitation that will likely be removed in a future release.
+* જો એકથી વધુ ચાલુ ટ્રાન્ઝિશન્સ હોય, તો રિએક્ટ હાલમાં તેમને એકસાથે બેચ કરે છે. આ એક મર્યાદા છે જેને ભવિષ્યના રિલીઝમાં દૂર કરવામાં આવશે.
 
 ---
 
-## Usage {/*usage*/}
+## ઉપયોગ {/*usage*/}
 
-### Marking a state update as a non-blocking Transition {/*marking-a-state-update-as-a-non-blocking-transition*/}
+### સ્ટેટ અપડેટને અવરોધક ન બનાવતું ટ્રાન્ઝિશન તરીકે ચિહ્નિત કરવું {/*marking-a-state-update-as-a-non-blocking-transition*/}
 
-You can mark a state update as a *Transition* by wrapping it in a `startTransition` call:
+તમે સ્ટેટ અપડેટને *ટ્રાન્ઝિશન* તરીકે ચિહ્નિત કરી શકો છો જેને `startTransition` કૉલમાં લપેટીને:
 
 ```js {7,9}
 import { startTransition } from 'react';
@@ -84,14 +84,14 @@ function TabContainer() {
 }
 ```
 
-Transitions let you keep the user interface updates responsive even on slow devices.
+ટ્રાન્ઝિશન્સ ધીમી ડિવાઇસીસ પર પણ તમારા યુઝર ઇન્ટરફેસ અપડેટ્સને પ્રતિસાદી રાખવા દે છે.
 
-With a Transition, your UI stays responsive in the middle of a re-render. For example, if the user clicks a tab but then change their mind and click another tab, they can do that without waiting for the first re-render to finish.
+ટ્રાન્ઝિશન સાથે, તમારું UI રી-રેન્ડરની વચ્ચે પ્રતિસાદી રહે છે. ઉદાહરણ તરીકે, જો યુઝર કોઈ ટેબ પર ક્લિક કરે પણ પછી તેમનું મન બદલાઈ જાય અને બીજી ટેબ પર ક્લિક કરે, તો તેઓ પ્રથમ રી-રેન્ડર પૂરું થવાની રાહ જોયા વિના તે કરી શકે છે.
 
 <Note>
 
-`startTransition` is very similar to [`useTransition`](/reference/react/useTransition), except that it does not provide the `isPending` flag to track whether a Transition is ongoing. You can call `startTransition` when `useTransition` is not available. For example, `startTransition` works outside components, such as from a data library.
+`startTransition` [`useTransition`](/reference/react/useTransition) સાથે ખૂબ જ સમાન છે, સિવાય કે તે ટ્રાન્ઝિશન ચાલુ છે કે નહીં તે ટ્રેક કરવા માટે `isPending` ધ્વજ પૂરી પાડતું નથી. જ્યારે `useTransition` ઉપલબ્ધ ન હોય ત્યારે તમે `startTransition` ને કૉલ કરી શકો છો. ઉદાહરણ તરીકે, `startTransition` કમ્પોનેન્ટ્સની બહાર કામ કરે છે, જેમ કે ડેટા ફેચિંગ લાઇબ્રેરીઝ અથવા અન્ય એસિન્ક્રોનસ ઓપરેશન્સ માટે.
 
-[Learn about Transitions and see examples on the `useTransition` page.](/reference/react/useTransition)
+[ટ્રાન્ઝિશન્સ વિશે શીખો અને `useTransition` પેજ પર ઉદાહરણો જુઓ.](/reference/react/useTransition)
 
 </Note>
