@@ -4,7 +4,7 @@ title: prerenderToNodeStream
 
 <Intro>
 
-`prerender` renders a React tree to a static HTML string using a [Node.js Stream.](https://nodejs.org/api/stream.html).
+`prerenderToNodeStream` renders a React tree to a static HTML string using a [Node.js Stream.](https://nodejs.org/api/stream.html).
 
 ```js
 const {prelude} = await prerenderToNodeStream(reactNode, options?)
@@ -289,7 +289,7 @@ Suspense-enabled data fetching without the use of an opinionated framework is no
 
 ### My stream doesn't start until the entire app is rendered {/*my-stream-doesnt-start-until-the-entire-app-is-rendered*/}
 
-The `prerenderToNodeStream` response waits for the entire app to finish rendering, including waiting for all suspense boundaries to resolve, before resolving. It is designed for static site generation (SSG) ahead of time and does not support streaming more content as it loads.
+The `prerenderToNodeStream` response waits for the entire app to finish rendering, including waiting for all Suspense boundaries to resolve, before resolving. It is designed for static site generation (SSG) ahead of time and does not support streaming more content as it loads.
 
 To stream content as it loads, use a streaming server render API like [renderToPipeableStream](/reference/react-dom/server/renderToPipeableStream).
  
