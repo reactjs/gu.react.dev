@@ -1,7 +1,12 @@
 ---
-title: React Server Components
-canary: true
+title: Server Components
 ---
+
+<RSC>
+
+Sever Components are for use in [React Server Components](/learn/start-a-new-react-project#bleeding-edge-react-frameworks).
+
+</RSC>
 
 <Intro>
 
@@ -174,7 +179,7 @@ The bundler then combines the data, rendered Server Components and dynamic Clien
 ```js
 <div>
   <span>By: The React Team</span>
-  <p>React 19 Beta is...</p>
+  <p>React 19 is...</p>
 </div>
 ```
 
@@ -188,7 +193,7 @@ Server Components are not sent to the browser, so they cannot use interactive AP
 
 #### There is no directive for Server Components. {/*there-is-no-directive-for-server-components*/}
 
-A common misunderstanding is that Server Components are denoted by `"use server"`, but there is no directive for Server Components. The `"use server"` directive is used for Server Actions.
+A common misunderstanding is that Server Components are denoted by `"use server"`, but there is no directive for Server Components. The `"use server"` directive is used for Server Functions.
 
 For more info, see the docs for [Directives](/reference/rsc/directives).
 
@@ -198,7 +203,7 @@ For more info, see the docs for [Directives](/reference/rsc/directives).
 In the following example, the `Notes` Server Component imports an `Expandable` Client Component that uses state to toggle its `expanded` state:
 ```js
 // Server Component
-import Exapandable from './Expandable';
+import Expandable from './Expandable';
 
 async function Notes() {
   const notes = await db.notes.getAll();
