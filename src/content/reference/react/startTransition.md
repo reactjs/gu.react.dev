@@ -42,6 +42,8 @@ function TabContainer() {
 #### પેરામીટર્સ {/*parameters*/}
 
 
+* `action`: A function that updates some state by calling one or more [`set` functions](/reference/react/useState#setstate). React calls `action` immediately with no parameters and marks all state updates scheduled synchronously during the `action` function call as Transitions. Any async calls awaited in the `action` will be included in the transition, but currently require wrapping any `set` functions after the `await` in an additional `startTransition` (see [Troubleshooting](/reference/react/useTransition#react-doesnt-treat-my-state-update-after-await-as-a-transition)). State updates marked as Transitions will be [non-blocking](#marking-a-state-update-as-a-non-blocking-transition) and [will not display unwanted loading indicators.](/reference/react/useTransition#preventing-unwanted-loading-indicators).
+
 * `scope`: એક ફંક્શન જે એક અથવા વધુ [`set` ફંક્શન્સ](/reference/react/useState#setstate) ને કૉલ કરીને કેટલીક state અપડેટ કરે છે. રિએક્ટ તરત જ `scope` ને કોઈ આર્ગ્યુમેન્ટ્સ વિના કૉલ કરે છે અને `scope` ફંક્શન કૉલ દરમિયાન સિંક્રોનસલી શેડ્યૂલ કરેલા બધા state અપડેટ્સને ટ્રાન્ઝિશન્સ તરીકે ચિહ્નિત કરે છે. તેઓ [અવરોધક નથી](/reference/react/useTransition#marking-a-state-update-as-a-non-blocking-transition) અને [અવાંછિત લોડિંગ સૂચકો બતાવશે નહીં.](/reference/react/useTransition#preventing-unwanted-loading-indicators)
 
 
@@ -51,9 +53,11 @@ function TabContainer() {
 
 #### ચેતવણીઓ {/*caveats*/}
 
+
 * `startTransition` એ ટ્રાન્ઝિશન પેન્ડિંગ છે કે નહીં તે ટ્રેક કરવાની રીત પૂરી પાડતું નથી. ટ્રાન્ઝિશન ચાલુ હોય ત્યારે પેન્ડિંગ સૂચક બતાવવા માટે, તમને [`useTransition`](/reference/react/useTransition) ની જરૂર પડશે.
 
 * તમે કોઈ stateના `set` ફંક્શનની ઍક્સેસ ધરાવો છો તો જ તમે અપડેટને ટ્રાન્ઝિશનમાં લપેટી શકો છો. જો તમે કોઈ પ્રોપ અથવા કસ્ટમ હુક રિટર્ન વેલ્યુના પ્રતિસાદમાં ટ્રાન્ઝિશન શરૂ કરવા માંગો છો, તો [`useDeferredValue`](/reference/react/useDeferredValue) અજમાવો.
+
 
 
 * તમે `startTransition` ને પાસ કરેલું ફંક્શન સિંક્રોનસ હોવું જોઈએ. રિએક્ટ તરત જ આ ફંક્શનને એક્ઝિક્યુટ કરે છે, જે દરમિયાન થતા બધા state અપડેટ્સને ટ્રાન્ઝિશન્સ તરીકે ચિહ્નિત કરે છે. જો તમે પછીથી વધુ state અપડેટ્સ કરવાનો પ્રયાસ કરો (ઉદાહરણ તરીકે, ટાઈમઆઉટમાં), તેઓ ટ્રાન્ઝિશન્સ તરીકે ચિહ્નિત નહીં થાય.
