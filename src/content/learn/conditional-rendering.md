@@ -16,7 +16,7 @@ title: શરતી રેન્ડરિંગ
 
 </YouWillLearn>
 
-## શરતી રીતે JSX રીટર્ન કરવું {/*conditionally-returning-*/}
+## શરતી રીતે JSX રીટર્ન કરવું {/*conditionally-returning-jsx*/}
 
 માનો કે તમારી પાસે `PackingList` નામનું કમ્પોનેન્ટ છે, જે અમુક `Item`s રેન્ડર કરે છે, જેમને packed તરીકે અથવા not packed તરીકે ચિહ્નિત કરી શકાય છે:
 
