@@ -165,7 +165,7 @@ function Counter() {
 
 <DiagramGroup>
 
-<Diagram name="preserving_state_increment" height={248} width={441} alt="Diagram of a tree of React components. The root node is labeled 'div' and has two children. The left child is labeled 'Counter' and contains a state bubble labeled 'count' with value 0. The right child is labeled 'Counter' and contains a state bubble labeled 'count' with value 1. The state bubble of the right child is highlighted in yellow to indicate its value has updated.">
+<Diagram name="preserving_state_increment" height={248} width={441} alt="React ઘટકોના વૃક્ષનો આલેખ. Root Node 'div' તરીકે લેબલ કરેલું છે અને તેના બે સંતાનો છે. ડાબી બાજુનો સંતાન 'Counter' તરીકે લેબલ કરેલું છે અને તેમાં 'count' નામનું state બબલ છે જેની કિંમત 0 છે. જમણી બાજુનો સંતાન પણ 'Counter' તરીકે લેબલ કરેલું છે અને તેમાં 'count' નામનું state બબલ છે જેની કિંમત 1 છે. જમણું state બબલ પીળા રંગમાં હાઇલાઇટ કરેલું છે, જેથી તેની કિંમતમાં ફેરફાર દર્શાવવામાં આવે છે.">
 
 State અપડેટ કરવું.
 
