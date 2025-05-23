@@ -1,30 +1,30 @@
 ---
-title: Describing the UI
+title: UI નું વર્ણન
 ---
 
 <Intro>
 
-React is a JavaScript library for rendering user interfaces (UI). UI is built from small units like buttons, text, and images. React lets you combine them into reusable, nestable *components.* From web sites to phone apps, everything on the screen can be broken down into components. In this chapter, you'll learn to create, customize, and conditionally display React components.
+React એ જાવાસ્ક્રિપ્ટ લાઈબ્રેરી છે જે યૂઝર ઈન્ટરફેસ (UI) રેન્ડર કરવા માટે ઉપયોગમાં લેવામાં આવે છે. UI સામાન્ય રીતે નાના ઘટકોમાંથી બનેલું હોય છે જેમ કે બટન, ટેક્સ્ટ અને છબીઓ. React તમને આવા ઘટકોને ફરીથી વાપરી શકાય તેવા અને અંદર અંદર ગોઠવી શકાય એવા *કમ્પોનેન્ટસ* તરીકે બનાવી, જોડવાની સુવિધા આપે છે. વેબસાઇટથી લઈને મોબાઇલ એપ સુધી, સ્ક્રીન પર દેખાતું લગભગ બધું કમ્પોનેન્ટસના રૂપમાં વહેચી શકાય છે. આ અધ્યાયમાં, તમે React કમ્પોનેન્ટસ કેવી રીતે બનાવવા, તેમને કસ્ટમાઇઝ કરવા અને અને જરૂર મુજબ શરતી રીતે કેવી રીતે દર્શાવવા તે શીખશો.
 
 </Intro>
 
 <YouWillLearn isChapter={true}>
 
-* [How to write your first React component](/learn/your-first-component)
-* [When and how to create multi-component files](/learn/importing-and-exporting-components)
-* [How to add markup to JavaScript with JSX](/learn/writing-markup-with-jsx)
-* [How to use curly braces with JSX to access JavaScript functionality from your components](/learn/javascript-in-jsx-with-curly-braces)
-* [How to configure components with props](/learn/passing-props-to-a-component)
-* [How to conditionally render components](/learn/conditional-rendering)
-* [How to render multiple components at a time](/learn/rendering-lists)
-* [How to avoid confusing bugs by keeping components pure](/learn/keeping-components-pure)
-* [Why understanding your UI as trees is useful](/learn/understanding-your-ui-as-a-tree)
+* [તમારું પહેલું React કમ્પોનેન્ટ કેવી રીતે લખશો?](/learn/your-first-component)
+* [મલ્ટી-કમ્પોનેન્ટ ફાઇલો ક્યારે અને કેવી રીતે બનાવવી?](/learn/importing-and-exporting-components)
+* [JSX સાથે જાવાસ્ક્રિપ્ટમાં માર્કઅપ કેવી રીતે જોડવું?](/learn/writing-markup-with-jsx)
+* [તમારા કમ્પોનેન્ટ્સમાંથી જાવાસ્ક્રિપ્ટ ફંક્શનાલિટી ઍક્સેસ કરવા માટે JSX સાથે કર્લી બ્રેસિસ કેવી રીતે વાપરશો?](/learn/javascript-in-jsx-with-curly-braces)
+* [કમ્પોનેન્ટ્સને props ના માધ્યમથી કઈ રીતે કન્ફિગર કરશો?](/learn/passing-props-to-a-component)
+* [કમ્પોનેન્ટ્સને શરતો પ્રમાણે કેવી રીતે રેન્ડર કરશો?](/learn/conditional-rendering)
+* [એક સમયે અનેક કમ્પોનેન્ટ્સને કેવી રીતે રેન્ડર કરશો?](/learn/rendering-lists)
+* [કમ્પોનેન્ટ્સને શુદ્ધ રાખવાથી ગૂંચવણજનક બગ્સથી કેવી રીતે બચવું?](/learn/keeping-components-pure)
+* [તમારા UI ને વૃક્ષ રચના તરીકે સમજવું કેમ ઉપયોગી છે?](/learn/understanding-your-ui-as-a-tree)
 
 </YouWillLearn>
 
-## Your first component {/*your-first-component*/}
+## તમારું પહેલું કમ્પોનેન્ટ {/*your-first-component*/}
 
-React applications are built from isolated pieces of UI called *components*. A React component is a JavaScript function that you can sprinkle with markup. Components can be as small as a button, or as large as an entire page. Here is a `Gallery` component rendering three `Profile` components:
+React એપ્લિકેશન્સ અલગ-અલગ UI ઘટકોના સમૂહથી બનેલી હોય છે, જેને *કમ્પોનેન્ટસ* કહે છે. React કમ્પોનેન્ટ એ જાવાસ્ક્રિપ્ટ ફંક્શન હોય છે જેમાં તમે Markup ઉમેરી શકો છો. કમ્પોનેન્ટ્સ નાનાં બટન જેટલાં સાદા હોઈ શકે છે અથવા આખા પેજ જેટલાં મોટા પણ હોઈ શકે છે. નીચે આપેલું ઉદાહરણ એક `Gallery` કમ્પોનેન્ટ બતાવે છે, જે ત્રણ `Profile` કમ્પોનેન્ટસ રેન્ડર કરે છે:
 
 <Sandpack>
 
@@ -58,13 +58,13 @@ img { margin: 0 10px 10px 0; height: 90px; }
 
 <LearnMore path="/learn/your-first-component">
 
-Read **[Your First Component](/learn/your-first-component)** to learn how to declare and use React components.
+React કમ્પોનેન્ટ્સ કેવી રીતે ડિક્લેર અને ઉપયોગ કરવાં તે શીખવા માટે **[તમારું પહેલું કમ્પોનેન્ટ](/learn/your-first-component)** વાંચો.
 
 </LearnMore>
 
-## Importing and exporting components {/*importing-and-exporting-components*/}
+## કમ્પોનેન્ટ્સને ઇમ્પોર્ટ અને એક્સપોર્ટ કરવા {/*importing-and-exporting-components*/}
 
-You can declare many components in one file, but large files can get difficult to navigate. To solve this, you can *export* a component into its own file, and then *import* that component from another file:
+તમે એક જ ફાઇલમાં ઘણાં કમ્પોનેન્ટસ ડિક્લેર કરી શકો છો, પરંતુ મોટી ફાઇલોને મેનેજ કરવી મુશ્કેલ બની શકે છે. આ સમસ્યાનો ઉકેલ લાવવા માટે, તમે દરેક કમ્પોનેન્ટને તેની અલગ ફાઇલમાં *એક્સપોર્ટ* કરી શકો છો અને પછી બીજા ફાઇલમાંથી તે કમ્પોનેન્ટને *ઇમ્પોર્ટ* કરી શકો છો:
 
 
 <Sandpack>
@@ -113,15 +113,15 @@ img { margin: 0 10px 10px 0; }
 
 <LearnMore path="/learn/importing-and-exporting-components">
 
-Read **[Importing and Exporting Components](/learn/importing-and-exporting-components)** to learn how to split components into their own files.
+કમ્પોનેન્ટ્સને પોતાની ફાઇલમાં અલગ કેવી રીતે કરવા તે શીખવા માટે **[કમ્પોનેન્ટ્સને ઇમ્પોર્ટ અને એક્સપોર્ટ કરવા](/learn/importing-and-exporting-components)** વાંચો.
 
 </LearnMore>
 
-## Writing markup with JSX {/*writing-markup-with-jsx*/}
+## JSX સાથે માર્કઅપ લખવું {/*writing-markup-with-jsx*/}
 
-Each React component is a JavaScript function that may contain some markup that React renders into the browser. React components use a syntax extension called JSX to represent that markup. JSX looks a lot like HTML, but it is a bit stricter and can display dynamic information.
+દરેક React કમ્પોનેન્ટ એ જાવાસ્ક્રિપ્ટ ફંક્શન છે જેમાં કેટલાક માર્કઅપ હોઈ શકે છે, જેને React બ્રાઉઝરમાં રેન્ડર કરે છે. આ માર્કઅપ રજૂ કરવા માટે React કમ્પોનેન્ટ JSX નામના સિન્ટેક્સ એક્સ્ટેંશનનો ઉપયોગ કરે છે. JSX દેખાવમાં HTML જેવું લાગે છે, પરંતુ તે થોડું વધુ કડક હોય છે અને ડાયનામિક માહિતી પણ દર્શાવી શકે છે.
 
-If we paste existing HTML markup into a React component, it won't always work:
+જો આપણે હાલના HTML માર્કઅપને સીધા React કમ્પોનેન્ટમાં પેસ્ટ કરીએ છીએ, તો તે હંમેશાં કામ કરશે નહીં:
 
 <Sandpack>
 
@@ -150,7 +150,7 @@ img { height: 90px; }
 
 </Sandpack>
 
-If you have existing HTML like this, you can fix it using a [converter](https://transform.tools/html-to-jsx):
+જો તમારા પાસે આવું પહેલેથી જ રહેલું HTML છે, તો તમે તેને [કન્વર્ટર](https://transform.tools/html-to-jsx) નો ઉપયોગ કરીને સુધારી શકો છો.:
 
 <Sandpack>
 
@@ -182,13 +182,13 @@ img { height: 90px; }
 
 <LearnMore path="/learn/writing-markup-with-jsx">
 
-Read **[Writing Markup with JSX](/learn/writing-markup-with-jsx)** to learn how to write valid JSX.
+માન્ય JSX કેવી રીતે લખવું તે શીખવા માટે **[JSX સાથે માર્કઅપ લખવું](/learn/writing-markup-with-jsx)** વાંચો.
 
 </LearnMore>
 
-## JavaScript in JSX with curly braces {/*javascript-in-jsx-with-curly-braces*/}
+## Curly Braces સાથે JSX માં જાવાસ્ક્રિપ્ટ નો ઉપયોગ {/*javascript-in-jsx-with-curly-braces*/}
 
-JSX lets you write HTML-like markup inside a JavaScript file, keeping rendering logic and content in the same place. Sometimes you will want to add a little JavaScript logic or reference a dynamic property inside that markup. In this situation, you can use curly braces in your JSX to "open a window" to JavaScript:
+JSX તમને જાવાસ્ક્રિપ્ટ ફાઇલની અંદર HTML જેવા માર્કઅપ લખવાની છૂટ આપે છે, જેથી રેન્ડરિંગ લોજિક અને કન્ટેન્ટ એકસાથે રહે. ઘણીવાર એવું થાય કે તમે માર્કઅપમાં થોડુ જાવાસ્ક્રિપ્ટ લોજિક ઉમેરવા અથવા કોઈ ડાયનામિક પ્રોપર્ટીનો રેફરન્સ આપવા માંગો છો. આવી સ્થિતિમાં, તમે JSX માં curly braces `{}` નો ઉપયોગ કરીને જાવાસ્ક્રિપ્ટ માટે એક "નવો માર્ગ ખોલી" શકો છો:
 
 <Sandpack>
 
@@ -230,13 +230,13 @@ body > div > div { padding: 20px; }
 
 <LearnMore path="/learn/javascript-in-jsx-with-curly-braces">
 
-Read **[JavaScript in JSX with Curly Braces](/learn/javascript-in-jsx-with-curly-braces)** to learn how to access JavaScript data from JSX.
+JSX માં જાવાસ્ક્રિપ્ટના ડેટાનો ઉપયોગ કરવાનું શીખવા માટે **[Curly Braces સાથે JSX માં જાવાસ્ક્રિપ્ટ નો ઉપયોગ](/learn/javascript-in-jsx-with-curly-braces)** વાંચો.
 
 </LearnMore>
 
-## Passing props to a component {/*passing-props-to-a-component*/}
+## કમ્પોનેન્ટમાં props પસાર કરવા {/*passing-props-to-a-component*/}
 
-React components use *props* to communicate with each other. Every parent component can pass some information to its child components by giving them props. Props might remind you of HTML attributes, but you can pass any JavaScript value through them, including objects, arrays, functions, and even JSX!
+React માં, કમ્પોનેન્ટસ એકબીજાને માહિતી આપવા માટે props નો ઉપયોગ કરે છે. એક પેરેન્ટ કમ્પોનેન્ટ પોતાનાં child કમ્પોનેન્ટને કંઈક માહિતી આપવા માંગે, ત્યારે તે આ માહિતી props તરીકે મોકલે છે. Props થોડાક HTML એટ્રિબ્યુટ્સ જેવા લાગે છે, પણ તેમાં તમે જાવાસ્ક્રિપ્ટના કોઈપણ વેલ્યુ મોકલી શકો છો—જેમાં ઓબ્જેક્ટસ, arrays, ફંકશનસ, અને JSX નો પણ સમાવેશ થાય છે!
 
 <Sandpack>
 
@@ -311,15 +311,15 @@ export function getImageUrl(person, size = 's') {
 
 <LearnMore path="/learn/passing-props-to-a-component">
 
-Read **[Passing Props to a Component](/learn/passing-props-to-a-component)** to learn how to pass and read props.
+Props કેવી રીતે મોકલવા અને કેવી રીતે ઉપયોગ કરવા તે શીખવા માટે **[કમ્પોનેન્ટમાં props પસાર કરવા](/learn/passing-props-to-a-component)** વાંચો.
 
 </LearnMore>
 
-## Conditional rendering {/*conditional-rendering*/}
+## શરતના આધાર પર JSX બતાવવુ {/*conditional-rendering*/}
 
-Your components will often need to display different things depending on different conditions. In React, you can conditionally render JSX using JavaScript syntax like `if` statements, `&&`, and `? :` operators.
+ક્યારેક તમારી એપ્લિકેશનમાં એવી જરૂર પડે છે કે તમારા કમ્પોનેન્ટ્સ અલગ-અલગ સ્થિતિઓ પ્રમાણે અલગ-અલગ વસ્તુઓ બતાવે. React માં તમે જાવાસ્ક્રિપ્ટના લોજિક, જેમ કે `if` સ્ટેટમેન્ટ, `&&`, અને `? :` ઓપરેટર્સનો ઉપયોગ કરીને JSXને શરત મુજબ બતાવી શકો છો.
 
-In this example, the JavaScript `&&` operator is used to conditionally render a checkmark:
+ઉદાહરણ તરીકે, નીચેના કોડમાં `&&` ઓપરેટરનો ઉપયોગ કરીને ચેકમાર્ક માત્ર શરત સાચી હોય ત્યારે જ બતાવવામાં આવે છે:
 
 <Sandpack>
 
@@ -359,15 +359,15 @@ export default function PackingList() {
 
 <LearnMore path="/learn/conditional-rendering">
 
-Read **[Conditional Rendering](/learn/conditional-rendering)** to learn the different ways to render content conditionally.
+કન્ટેન્ટને શરત મુજબ કેવી રીતે રેન્ડર કરવું તે શીખવા માટે **[શરતના આધાર પર JSX બતાવવુ](/learn/conditional-rendering)** વાંચો.
 
 </LearnMore>
 
-## Rendering lists {/*rendering-lists*/}
+## સૂચિ રેન્ડર કરવી {/*rendering-lists*/}
 
-You will often want to display multiple similar components from a collection of data. You can use JavaScript's `filter()` and `map()` with React to filter and transform your array of data into an array of components.
+ઘણીવાર એવું થાય છે કે તમે ડેટાની સૂચિમાંથી બહુ સરખા એવા ઘણા કમ્પોનેન્ટ્સ સ્ક્રીન પર બતાવવા હોય છે. આવી સ્થિતિમાં તમે જાવાસ્ક્રિપ્ટનાં `filter()` અને `map()` ફંક્શન્સનો ઉપયોગ કરીને ડેટાના array ને કમ્પોનેન્ટસના array માં બદલી શકો છો.
 
-For each array item, you will need to specify a `key`. Usually, you will want to use an ID from the database as a `key`. Keys let React keep track of each item's place in the list even if the list changes.
+જ્યારે તમે array માંથી દરેક આઇટમ રેન્ડર કરો છો, ત્યારે તમારે દરેક array આઇટમ માટે એક `key` આપવી જરૂરી હોય છે. સામાન્ય રીતે,  ડેટાબેઝમાંથી મળતી એક અનન્ય ID ને key તરીકે ઉપયોગ કરવો ઉત્તમ હોય છે. Key દ્વારા React એ યાદ રાખી શકે છે કે દરેક આઇટમ લિસ્ટમાં કઈ જગ્યાએ છે જો લિસ્ટ બદલાય ત્યારે પણ.
 
 <Sandpack>
 
@@ -459,18 +459,18 @@ h2 { font-size: 20px; }
 
 <LearnMore path="/learn/rendering-lists">
 
-Read **[Rendering Lists](/learn/rendering-lists)** to learn how to render a list of components, and how to choose a key.
+કમ્પોનેન્ટ્સની સૂચિ કેવી રીતે રેન્ડર કરવી અને યોગ્ય key કેવી રીતે પસંદ કરવી તે શીખવા માટે **[સૂચિ રેન્ડર કરવી](/learn/rendering-lists)** વાંચો.
 
 </LearnMore>
 
-## Keeping components pure {/*keeping-components-pure*/}
+## કમ્પોનેન્ટ્સને શુદ્ધ રાખવા {/*keeping-components-pure*/}
 
-Some JavaScript functions are *pure.* A pure function:
+કેટલાક જાવાસ્ક્રિપ્ટ ફંક્શન્સ શુદ્ધ (pure) હોય છે. એક શુદ્ધ ફંક્શનની ખાસિયતો હોય છે:
 
-* **Minds its own business.** It does not change any objects or variables that existed before it was called.
-* **Same inputs, same output.** Given the same inputs, a pure function should always return the same result.
+* **ફક્ત પોતાનું કામ કરે છે.** તે પોતાની બહારના કોઈપણ ઓબ્જેક્ટ કે વેરિએબલમાં કોઈ ફેરફાર કરતું નથી, જે તેના કોલિંગ પહેલા હાજર હતા.
+* **એજ ઇનપુટ, એજ આઉટપુટ.** એક સમાન ઇનપુટ માટે, શુદ્ધ ફંક્શન હંમેશાં સમાન પરિણામ આપે છે.
 
-By strictly only writing your components as pure functions, you can avoid an entire class of baffling bugs and unpredictable behavior as your codebase grows. Here is an example of an impure component:
+તમારા બધા React કમ્પોનેન્ટ્સને શુદ્ધ ફંક્શન્સ તરીકે લખવાથી, તમે મોટી હોય તેવી અણપેક્ષિત ભૂલો અને અજંપાજનક વર્તનથી બચી શકો છો—ખાસ કરીને જ્યારે પ્રોજેક્ટ સમય સાથે મોટો બનતો જાય છે. નીચે એક ઉદાહરણ છે જેમાં કમ્પોનેન્ટ શુદ્ધ નથી:
 
 <Sandpack>
 
@@ -496,7 +496,7 @@ export default function TeaSet() {
 
 </Sandpack>
 
-You can make this component pure by passing a prop instead of modifying a preexisting variable:
+આ કમ્પોનેન્ટને શુદ્ધ બનાવા માટે, તમે પૂર્વમાં હાજર વેરિએબલને બદલીને પ્રોપ પસાર કરી શકો છો:
 
 <Sandpack>
 
@@ -520,43 +520,43 @@ export default function TeaSet() {
 
 <LearnMore path="/learn/keeping-components-pure">
 
-Read **[Keeping Components Pure](/learn/keeping-components-pure)** to learn how to write components as pure, predictable functions.
+કમ્પોનેન્ટ્સને શુદ્ધ અને પુનરાવૃત્તીશીલ ફંક્શન તરીકે લખવા વિશે શીખવા માટે **[કમ્પોનેન્ટ્સને શુદ્ધ રાખવા](/learn/keeping-components-pure)** વાંચો.
 
 </LearnMore>
 
-## Your UI as a tree {/*your-ui-as-a-tree*/}
+## તમારા UI ને વૃક્ષ તરીકે સમજવું {/*your-ui-as-a-tree*/}
 
-React uses trees to model the relationships between components and modules. 
+React કમ્પોનેન્ટ્સ અને મોડ્યૂલ્સ વચ્ચેના સંબંધોને દર્શાવવા માટે વૃક્ષોનો ઉપયોગ કરે છે. 
 
-A React render tree is a representation of the parent and child relationship between components. 
+એક React રેન્ડર વૃક્ષ એ કમ્પોનેન્ટ્સના પેરેન્ટ અને ચાઈલ્ડ સંબંધોને પ્રસ્તુત કરે છે. 
 
 <Diagram name="generic_render_tree" height={250} width={500} alt="A tree graph with five nodes, with each node representing a component. The root node is located at the top the tree graph and is labelled 'Root Component'. It has two arrows extending down to two nodes labelled 'Component A' and 'Component C'. Each of the arrows is labelled with 'renders'. 'Component A' has a single 'renders' arrow to a node labelled 'Component B'. 'Component C' has a single 'renders' arrow to a node labelled 'Component D'.">
 
-An example React render tree.
+એક ઉદાહરણ React રેન્ડર વૃક્ષ.
 
 </Diagram>
 
-Components near the top of the tree, near the root component, are considered top-level components. Components with no child components are leaf components. This categorization of components is useful for understanding data flow and rendering performance.
+વૃક્ષના ટોચ પર, રુટ કમ્પોનેન્ટના નજીક આવેલી કમ્પોનેન્ટ્સને ટોપ-લેવલ કમ્પોનેન્ટ્સ માનવામાં આવે છે. અને જે કમ્પોનેન્ટ્સના ચાઈલ્ડ કમ્પોનેન્ટ્સ નથી, તે લીફ કમ્પોનેન્ટ્સ તરીકે ઓળખાય છે. કમ્પોનેન્ટ્સના આ વિભાજનને ડેટા પ્રવાહ અને રેન્ડરિંગ પ્રદર્શન સમજવામાં ઉપયોગી માનવામાં આવે છે.
 
-Modelling the relationship between JavaScript modules is another useful way to understand your app. We refer to it as a module dependency tree. 
+જાવાસ્ક્રિપ્ટ મૉડ્યુલ્સ વચ્ચેના સંબંધને મૉડ્યુલ ડિપેન્ડન્સી વૃક્ષ (Module Dependency Tree) તરીકે મૉડેલ કરવું, એ પણ તમારા એપ્લિકેશનને સમજવા માટે એક ઉપયોગી રીત છે.
 
-<Diagram name="generic_dependency_tree" height={250} width={500} alt="A tree graph with five nodes. Each node represents a JavaScript module. The top-most node is labelled 'RootModule.js'. It has three arrows extending to the nodes: 'ModuleA.js', 'ModuleB.js', and 'ModuleC.js'. Each arrow is labelled as 'imports'. 'ModuleC.js' node has a single 'imports' arrow that points to a node labelled 'ModuleD.js'.">
+<Diagram name="generic_dependency_tree" height={250} width={500} alt="પાંચ ગાંઠો સાથેનો એક વૃક્ષ ગ્રાફ. દરેક નોડ જાવાસ્ક્રિપ્ટ મોડ્યુલનું પ્રતિનિધિત્વ કરે છે. ટોપ-મોસ્ટ નોડ 'RootModule.js' લેબલ થયેલ છે. તેમાં ગાંઠો સુધી વિસ્તરેલા ત્રણ તીર છે: 'ModuleA.js', 'ModuleB.js', અને 'ModuleC.js'. દરેક તીરને 'imports' તરીકે લેબલ કરવામાં આવે છે. 'ModuleC.js' નોડમાં એક જ 'imports' તીર હોય છે જે 'ModuleD.js' લેબલવાળા નોડ તરફ નિર્દેશ કરે છે.">
 
-An example module dependency tree.
+મૉડ્યુલ ડિપેન્ડન્સી વૃક્ષનું ઉદાહરણ.
 
 </Diagram>
 
-A dependency tree is often used by build tools to bundle all the relevant JavaScript code for the client to download and render. A large bundle size regresses user experience for React apps. Understanding the module dependency tree is helpful to debug such issues. 
+ડિપેન્ડન્સી વૃક્ષ (Dependency Tree) એ મોટાભાગના બિલ્ડ ટૂલ્સ દ્વારા ઉપયોગમાં લેવાય છે, જે ક્લાયન્ટ માટે ડાઉનલોડ અને રેન્ડર કરવા માટે તમામ સંબંધિત JavaScript કોડને બંડલ કરે છે. મોટા બંડલ કદને કારણે React એપ્લિકેશન્સમાં યુઝર અનુભવ પર નકારાત્મક અસર પડે છે. મૉડ્યુલ ડિપેન્ડન્સી વૃક્ષને સમજવાથી આવા problemasને ડિબગ કરવામાં મદદ મળે છે.
 
 <LearnMore path="/learn/understanding-your-ui-as-a-tree">
 
-Read **[Your UI as a Tree](/learn/understanding-your-ui-as-a-tree)** to learn how to create a render and module dependency trees for a React app and how they're useful mental models for improving user experience and performance.
+**[તમારા UI ને વૃક્ષ તરીકે સમજવું](/learn/understanding-your-ui-as-a-tree)** વાંચો, જેથી તમે React એપ્લિકેશન માટે રેન્ડર અને મૉડ્યુલ ડિપેન્ડન્સી વૃક્ષો કેવી રીતે બનાવી શકો અને તે કેવી રીતે યુઝર અનુભવ અને પ્રદર્શન સુધારવા માટે લાભદાયક માનસિક મોડલ તરીકે કામ કરે છે તે શીખી શકો.
 
 </LearnMore>
 
 
-## What's next? {/*whats-next*/}
+## આગળ શું? {/*whats-next*/}
 
-Head over to [Your First Component](/learn/your-first-component) to start reading this chapter page by page!
+પ્રથમ, [તમારું પહેલું કમ્પોનેન્ટ](/learn/your-first-component) પર જાઓ અને આ અધ્યાયને એક બાદ એક પાનું વાંચો!
 
-Or, if you're already familiar with these topics, why not read about [Adding Interactivity](/learn/adding-interactivity)?
+અથવા, જો તમે પહેલાથી આ વિષયોથી પરિચિત છો, તો [ઇન્ટરએક્ટિવિટી ઉમેરવી](/learn/adding-interactivity) વિશે વાંચો.
