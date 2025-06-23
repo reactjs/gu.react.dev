@@ -1,24 +1,20 @@
----
-title: Writing Markup with JSX
----
+# JSX સાથે માર્કઅપ લખવું {/*writing-markup-with-jsx*/}
+
+*JSX* એ JavaScript માટેનું syntax extension છે જે તમને JavaScript ફાઇલની અંદર HTML-જેવું માર્કઅપ લખવાની મંજૂરી આપે છે. React components લખવાની અન્ય રીતો પણ છે, પરંતુ મોટાભાગના React developers JSX ની સુવિધાને પસંદ કરે છે, અને મોટાભાગના codebases તેનો ઉપયોગ કરે છે.
 
 <Intro>
 
-*JSX* is a syntax extension for JavaScript that lets you write HTML-like markup inside a JavaScript file. Although there are other ways to write components, most React developers prefer the conciseness of JSX, and most codebases use it.
+તમે શીખશો કે:
+
+* React શા માટે markup અને rendering logic ને મિક્સ કરે છે
+* JSX HTML થી કેવી રીતે અલગ છે
+* JSX સાથે information કેવી રીતે display કરવી
 
 </Intro>
 
-<YouWillLearn>
+## JSX: JavaScript માં markup મૂકવું {/*jsx-putting-markup-into-javascript*/}
 
-* Why React mixes markup with rendering logic
-* How JSX is different from HTML
-* How to display information with JSX
-
-</YouWillLearn>
-
-## JSX: Putting markup into JavaScript {/*jsx-putting-markup-into-javascript*/}
-
-The Web has been built on HTML, CSS, and JavaScript. For many years, web developers kept content in HTML, design in CSS, and logic in JavaScript—often in separate files! Content was marked up inside HTML while the page's logic lived separately in JavaScript:
+Web લાંબા સમયથી HTML, CSS અને JavaScript પર બનાવવામાં આવ્યું છે. વર્ષો સુધી, web developers content ને HTML માં, design ને CSS માં, અને logic ને JavaScript માં—ઘણીવાર અલગ ફાઇલોમાં રાખતા હતા! Content HTML ની અંદર markup કરવામાં આવતું હતું જ્યારે page નું logic JavaScript માં અલગથી રહેતું હતું:
 
 <DiagramGroup>
 
@@ -36,17 +32,17 @@ JavaScript
 
 </DiagramGroup>
 
-But as the Web became more interactive, logic increasingly determined content. JavaScript was in charge of the HTML! This is why **in React, rendering logic and markup live together in the same place—components.**
+પરંતુ જેમ જેમ Web વધુ interactive બન્યું, તેમ તેમ logic વધુને વધુ content ને નિયંત્રિત કરવા લાગ્યું. JavaScript HTML ના હવાલે હતું! આ કારણથી **React માં, rendering logic અને markup એક જ જગ્યાએ રહે છે—components માં.**
 
 <DiagramGroup>
 
-<Diagram name="writing_jsx_sidebar" height={330} width={325} alt="React component with HTML and JavaScript from previous examples mixed. Function name is Sidebar which calls the function isLoggedIn, highlighted in yellow. Nested inside the function highlighted in purple is the p tag from before, and a Form tag referencing the component shown in the next diagram.">
+<Diagram name="writing_jsx_sidebar" height={330} width={325} alt="React component with HTML and JavaScript from previous examples mixed. Function name is Sidebar which calls the function isLoggedIn, highlighted in yellow, followed by conditional logic also highlighted in yellow. Nested inside a div highlighted in purple are the tags from before, replaced by three React components: NavLinks, ChatList, ContactList.">
 
 `Sidebar.js` React component
 
 </Diagram>
 
-<Diagram name="writing_jsx_form" height={330} width={325} alt="React component with HTML and JavaScript from previous examples mixed. Function name is Form containing two handlers onClick and onSubmit highlighted in yellow. Following the handlers is HTML highlighted in purple. The HTML contains a form element with a nested input element, each with an onClick prop.">
+<Diagram name="writing_jsx_form" height={330} width={325} alt="React component with HTML and JavaScript from previous examples mixed. Function name is Form highlighted in yellow containing two handlers onClick and onSubmit highlighted in yellow. Following the handlers is HTML highlighted in purple. The HTML contains a form element with a nested input element, both highlighted in purple.">
 
 `Form.js` React component
 
@@ -54,19 +50,15 @@ But as the Web became more interactive, logic increasingly determined content. J
 
 </DiagramGroup>
 
-Keeping a button's rendering logic and markup together ensures that they stay in sync with each other on every edit. Conversely, details that are unrelated, such as the button's markup and a sidebar's markup, are isolated from each other, making it safer to change either of them on their own.
+Button ના rendering logic અને markup ને એકસાથે રાખવાથી તેઓ દરેક edit પર એકબીજા સાથે sync માં રહે છે. ઉલટાનું, વિગતો જે સંબંધિત નથી, જેમ કે button નું markup અને sidebar નું markup, એકબીજાથી isolated હોય છે, જેનાથી કોઈપણને બદલવું વધુ સુરક્ષિત બને છે.
 
-Each React component is a JavaScript function that may contain some markup that React renders into the browser. React components use a syntax extension called JSX to represent that markup. JSX looks a lot like HTML, but it is a bit stricter and can display dynamic information. The best way to understand this is to convert some HTML markup to JSX markup.
+દરેક React component એક JavaScript function છે જેમાં થોડું markup હોઈ શકે છે જે React browser માં render કરે છે. React components એક syntax extension વાપરે છે જેને JSX કહેવાય છે markup represent કરવા માટે. JSX HTML જેવું દેખાય છે, પરંતુ તે થોડું વધુ strict છે અને dynamic information display કરી શકે છે.
 
-<Note>
+આ સમજવાનો શ્રેષ્ઠ રસ્તો એ છે કે HTML markup ને JSX markup માં convert કરવો:
 
-JSX and React are two separate things. They're often used together, but you *can* [use them independently](https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#whats-a-jsx-transform) of each other. JSX is a syntax extension, while React is a JavaScript library.
+## HTML ને JSX માં convert કરવું {/*converting-html-to-jsx*/}
 
-</Note>
-
-## Converting HTML to JSX {/*converting-html-to-jsx*/}
-
-Suppose that you have some (perfectly valid) HTML:
+ધારો કે તમારી પાસે આ (સંપૂર્ણ valid) HTML છે:
 
 ```html
 <h1>Hedy Lamarr's Todos</h1>
@@ -82,7 +74,7 @@ Suppose that you have some (perfectly valid) HTML:
 </ul>
 ```
 
-And you want to put it into your component:
+અને તમે તેને તમારા component માં મૂકવા માંગો છો:
 
 ```js
 export default function TodoList() {
@@ -92,15 +84,14 @@ export default function TodoList() {
 }
 ```
 
-If you copy and paste it as is, it will not work:
-
+જો તમે તેને copy અને paste કરશો, તો તે કામ કરશે નહીં:
 
 <Sandpack>
 
 ```js
 export default function TodoList() {
   return (
-    // This doesn't quite work!
+    // This doesn't work!
     <h1>Hedy Lamarr's Todos</h1>
     <img 
       src="https://i.imgur.com/yXOvdOSs.jpg" 
@@ -116,27 +107,23 @@ export default function TodoList() {
 }
 ```
 
-```css
-img { height: 90px }
-```
-
 </Sandpack>
 
-This is because JSX is stricter and has a few more rules than HTML! If you read the error messages above, they'll guide you to fix the markup, or you can follow the guide below.
+આ કારણે કે JSX HTML કરતાં વધુ strict છે અને તેના થોડા વધુ નિયમો છે! જો તમે ઉપરના error messages વાંચશો, તો તેઓ તમને markup ને fix કરવા માટે guide કરશે, અથવા તમે નીચેની guide ને follow કરી શકો છો.
 
 <Note>
 
-Most of the time, React's on-screen error messages will help you find where the problem is. Give them a read if you get stuck!
+મોટાભાગે, React ની on-screen error messages તમને સમસ્યા શોધવામાં મદદ કરશે. જો તમે અટવાઈ જાઓ તો તેને વાંચો!
 
 </Note>
 
-## The Rules of JSX {/*the-rules-of-jsx*/}
+## JSX ના નિયમો {/*the-rules-of-jsx*/}
 
-### 1. Return a single root element {/*1-return-a-single-root-element*/}
+### 1. Single root element return કરો {/*1-return-a-single-root-element*/}
 
-To return multiple elements from a component, **wrap them with a single parent tag.**
+Component માંથી multiple elements return કરવા માટે, **તેમને single parent tag સાથે wrap કરો.**
 
-For example, you can use a `<div>`:
+ઉદાહરણ તરીકે, તમે `<div>` વાપરી શકો છો:
 
 ```js {1,11}
 <div>
@@ -152,8 +139,7 @@ For example, you can use a `<div>`:
 </div>
 ```
 
-
-If you don't want to add an extra `<div>` to your markup, you can write `<>` and `</>` instead:
+જો તમે તમારા markup માં extra `<div>` ઉમેરવા નથી માંગતા, તો તમે `<>` અને `</>` લખી શકો છો:
 
 ```js {1,11}
 <>
@@ -169,21 +155,21 @@ If you don't want to add an extra `<div>` to your markup, you can write `<>` and
 </>
 ```
 
-This empty tag is called a *[Fragment.](/reference/react/Fragment)* Fragments let you group things without leaving any trace in the browser HTML tree.
+આ empty tag ને *[Fragment](/reference/react/Fragment)* કહેવાય છે. Fragments તમને DOM tree માં કોઈ trace છોડ્યા વિના વસ્તુઓને group કરવાની મંજૂરી આપે છે.
 
 <DeepDive>
 
-#### Why do multiple JSX tags need to be wrapped? {/*why-do-multiple-jsx-tags-need-to-be-wrapped*/}
+#### JSX ને single tag ની જરૂર શા માટે છે? {/*why-do-multiple-jsx-tags-need-to-be-wrapped*/}
 
-JSX looks like HTML, but under the hood it is transformed into plain JavaScript objects. You can't return two objects from a function without wrapping them into an array. This explains why you also can't return two JSX tags without wrapping them into another tag or a Fragment.
+JSX HTML જેવું લાગે છે, પરંતુ તેની અંદર તે plain JavaScript objects માં transform થાય છે. તમે function માંથી બે objects ને array માં wrap કર્યા વિના return કરી શકતા નથી. આ સમજાવે છે કે તમે બે JSX tags ને પણ બીજા tag અથવા Fragment માં wrap કર્યા વિના return કરી શકતા નથી.
 
 </DeepDive>
 
-### 2. Close all the tags {/*2-close-all-the-tags*/}
+### 2. બધા tags બંધ કરો {/*2-close-all-the-tags*/}
 
-JSX requires tags to be explicitly closed: self-closing tags like `<img>` must become `<img />`, and wrapping tags like `<li>oranges` must be written as `<li>oranges</li>`.
+JSX માં બધા tags explicitly બંધ કરવાની જરૂર છે: self-closing tags જેમ કે `<img>` એ `<img />` બનવા જોઈએ, અને wrapping tags જેમ કે `<li>oranges` એ `<li>oranges</li>` તરીકે લખવા જોઈએ.
 
-This is how Hedy Lamarr's image and list items look closed:
+આ રીતે Hedy Lamarr નું image અને list items બંધ દેખાય છે:
 
 ```js {2-6,8-10}
 <>
@@ -200,11 +186,11 @@ This is how Hedy Lamarr's image and list items look closed:
 </>
 ```
 
-### 3. camelCase <s>all</s> most of the things! {/*3-camelcase-salls-most-of-the-things*/}
+### 3. camelCase લગભગ બધું! {/*3-camelcase-salls-most-of-the-things*/}
 
-JSX turns into JavaScript and attributes written in JSX become keys of JavaScript objects. In your own components, you will often want to read those attributes into variables. But JavaScript has limitations on variable names. For example, their names can't contain dashes or be reserved words like `class`.
+JSX JavaScript માં transform થાય છે અને JSX માં લખાયેલા attributes JavaScript objects ની keys બને છે. તમારા પોતાના components માં, તમે ઘણીવાર આ attributes ને variables માં read કરવા માંગશો. પરંતુ JavaScript માં variable names ની limitations છે. ઉદાહરણ તરીકે, તેઓ dashes સમાવી શકતા નથી અથવા `class` જેવા reserved words હોઈ શકતા નથી.
 
-This is why, in React, many HTML and SVG attributes are written in camelCase. For example, instead of `stroke-width` you use `strokeWidth`. Since `class` is a reserved word, in React you write `className` instead, named after the [corresponding DOM property](https://developer.mozilla.org/en-US/docs/Web/API/Element/className):
+આ કારણથી, React માં ઘણા HTML અને SVG attributes camelCase માં લખાય છે. ઉદાહરણ તરીકે, `stroke-width` ને બદલે તમે `strokeWidth` વાપરો છો. કારણ કે `class` reserved word છે, React માં તમે તેના બદલે `className` લખો છો, [corresponding DOM property](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) પરથી નામ આપવામાં આવ્યું છે:
 
 ```js {4}
 <img 
@@ -214,19 +200,19 @@ This is why, in React, many HTML and SVG attributes are written in camelCase. Fo
 />
 ```
 
-You can [find all these attributes in the list of DOM component props.](/reference/react-dom/components/common) If you get one wrong, don't worry—React will print a message with a possible correction to the [browser console.](https://developer.mozilla.org/docs/Tools/Browser_Console)
+તમે [આ બધા attributes DOM component props reference માં શોધી શકો છો](/reference/react-dom/components/common). જો તમે કોઈ ખોટું કરો છો, તો ચિંતા કરશો નહીં—React browser console માં સુધારાનું સુઝાવ આપે છે.
 
 <Pitfall>
 
-For historical reasons, [`aria-*`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA) and [`data-*`](https://developer.mozilla.org/docs/Learn/HTML/Howto/Use_data_attributes) attributes are written as in HTML with dashes.
+Historical reasons માટે, [`aria-*`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA) અને [`data-*`](https://developer.mozilla.org/docs/Learn/HTML/Howto/Use_data_attributes) attributes HTML માં હોય તેવા dashes સાથે લખાય છે.
 
 </Pitfall>
 
-### Pro-tip: Use a JSX Converter {/*pro-tip-use-a-jsx-converter*/}
+### Pro-tip: JSX Converter વાપરો {/*pro-tip-use-a-jsx-converter*/}
 
-Converting all these attributes in existing markup can be tedious! We recommend using a [converter](https://transform.tools/html-to-jsx) to translate your existing HTML and SVG to JSX. Converters are very useful in practice, but it's still worth understanding what is going on so that you can comfortably write JSX on your own.
+Existing markup માંના આ બધા attributes ને convert કરવું કંટાળાજનક હોઈ શકે છે! અમે existing HTML અને SVG ને JSX માં translate કરવા માટે [converter](https://transform.tools/html-to-jsx) વાપરવાની ભલામણ કરીએ છીએ. Converters practice માં ખૂબ જ ઉપયોગી છે, પરંતુ તમે JSX પર તમારી જાતે comfortably લખી શકો તે માટે શું થઈ રહ્યું છે તે સમજવું હજુ પણ મહત્વપૂર્ણ છે.
 
-Here is your final result:
+આ તમારું અંતિમ પરિણામ છે:
 
 <Sandpack>
 
@@ -258,21 +244,19 @@ img { height: 90px }
 
 <Recap>
 
-Now you know why JSX exists and how to use it in components:
+હવે તમે જાણો છો કે JSX શા માટે અસતિત્વ ધરાવે છે અને components માં તેનો ઉપયોગ કેવી રીતે કરવો:
 
-* React components group rendering logic together with markup because they are related.
-* JSX is similar to HTML, with a few differences. You can use a [converter](https://transform.tools/html-to-jsx) if you need to.
-* Error messages will often point you in the right direction to fixing your markup.
+* React components rendering logic ને markup સાથે group કરે છે કારણ કે તેઓ related છે.
+* JSX HTML જેવું છે, પરંતુ થોડા differences સાથે. જરૂર હોય તો તમે [converter](https://transform.tools/html-to-jsx) વાપરી શકો છો.
+* Error messages ઘણીવાર તમને markup ને fix કરવાની યોગ્ય દિશા આપશે.
 
 </Recap>
 
-
-
 <Challenges>
 
-#### Convert some HTML to JSX {/*convert-some-html-to-jsx*/}
+#### HTML ને JSX માં convert કરો {/*convert-some-html-to-jsx*/}
 
-This HTML was pasted into a component, but it's not valid JSX. Fix it:
+આ HTML એક component માં paste કરવામાં આવ્યું હતું, પરંતુ તે valid JSX નથી. તેને fix કરો:
 
 <Sandpack>
 
@@ -291,24 +275,9 @@ export default function Bio() {
 }
 ```
 
-```css
-.intro {
-  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
-  background-clip: text;
-  color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.summary {
-  padding: 20px;
-  border: 10px solid gold;
-}
-```
-
 </Sandpack>
 
-Whether to do it by hand or using the converter is up to you!
+તમે તેને manually કરવા માંગો છો કે converter વાપરવા માંગો છો તે તમારા પર નિર્ભર છે!
 
 <Solution>
 
@@ -323,26 +292,12 @@ export default function Bio() {
       </div>
       <p className="summary">
         You can find my thoughts here.
-        <br /><br />
+        <br />
+        <br />
         <b>And <i>pictures</i></b> of scientists!
       </p>
     </div>
   );
-}
-```
-
-```css
-.intro {
-  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
-  background-clip: text;
-  color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.summary {
-  padding: 20px;
-  border: 10px solid gold;
 }
 ```
 
