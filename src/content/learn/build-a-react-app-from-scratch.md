@@ -65,7 +65,7 @@ Rsbuild includes built-in support for React features like fast refresh, JSX, Typ
 
 #### Metro for React Native {/*react-native*/}
 
-If you'd you're starting from scratch with React Native you'll need to use [Metro](https://metrobundler.dev/), the JavaScript bundler for React Native. Metro supports bundling for platforms like iOS and Android, but lacks many features when compared to the tools here. We recommend starting with Vite, Parcel, or Rsbuild unless your project requires React Native support.
+If you're starting from scratch with React Native you'll need to use [Metro](https://metrobundler.dev/), the JavaScript bundler for React Native. Metro supports bundling for platforms like iOS and Android, but lacks many features when compared to the tools here. We recommend starting with Vite, Parcel, or Rsbuild unless your project requires React Native support.
 
 </Note>
 
@@ -83,7 +83,7 @@ Routers are a core part of modern applications, and are usually integrated with 
 
 We suggest using:
 
-- [React Router](https://reactrouter.com/start/framework/custom)
+- [React Router](https://reactrouter.com/start/data/custom)
 - [Tanstack Router](https://tanstack.com/router/latest)
 
 
@@ -116,13 +116,13 @@ Similarly, if you rely on the apps using your framework to split the code, you m
 Splitting code by route, when integrated with bundling and data fetching, can reduce the initial load time of your app and the time it takes for the largest visible content of the app to render ([Largest Contentful Paint](https://web.dev/articles/lcp)).
 
 For code-splitting instructions, see your build tool docs:
-- [Vite build optimizations](https://v3.vitejs.dev/guide/features.html#build-optimizations)
+- [Vite build optimizations](https://vite.dev/guide/features.html#build-optimizations)
 - [Parcel code splitting](https://parceljs.org/features/code-splitting/)
 - [Rsbuild code splitting](https://rsbuild.dev/guide/optimization/code-splitting)
 
 ### Improving Application Performance {/*improving-application-performance*/}
 
-Since the build tool you select only support single page apps (SPAs) you'll need to implement other [rendering patterns](https://www.patterns.dev/vanilla/rendering-patterns) like server-side rendering (SSR), static site generation (SSG), and/or React Server Components (RSC). Even if you don't need these features at first, in the future there may be some routes that would benefit SSR, SSG or RSC.
+Since the build tool you select only supports single page apps (SPAs), you'll need to implement other [rendering patterns](https://www.patterns.dev/vanilla/rendering-patterns) like server-side rendering (SSR), static site generation (SSG), and/or React Server Components (RSC). Even if you don't need these features at first, in the future there may be some routes that would benefit SSR, SSG or RSC.
 
 * **Single-page apps (SPA)** load a single HTML page and dynamically updates the page as the user interacts with the app. SPAs are easier to get started with, but they can have slower initial load times. SPAs are the default architecture for most build tools.
 
