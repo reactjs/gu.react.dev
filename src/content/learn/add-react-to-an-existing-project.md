@@ -4,56 +4,55 @@ title: Add React to an Existing Project
 
 <Intro>
 
-If you want to add some interactivity to your existing project, you don't have to rewrite it in React. Add React to your existing stack, and render interactive React components anywhere.
+જો તમે તમારા હાલના પ્રોજેક્ટમાં કેટલીક ક્રિયાપ્રતિક્રિયા (interactivity) ઉમેરવા માંગતા હો, તો તમારે તેને React માં ફરીથી લખવાની જરૂર નથી. તમારા હાલના સ્ટેકમાં React ઉમેરો અને ગમે ત્યાં ઇન્ટરેક્ટિવ React કમ્પોનેન્ટ્સ રેન્ડર કરો.
 
 </Intro>
 
 <Note>
 
-**You need to install [Node.js](https://nodejs.org/en/) for local development.** Although you can [try React](/learn/installation#try-react) online or with a simple HTML page, realistically most JavaScript tooling you'll want to use for development requires Node.js.
+**લોકલી ડેવલપમેન્ટ માટે તમારે [Node.js](https://nodejs.org/en/) ઇન્સ્ટોલ કરવાની જરૂર છે.** જો કે તમે ઓનલાઇન અથવા તો સાધારણ HTML પેજ પર [React નો પ્રયાસ કરી શકો છો](/learn/installation#try-react), વાસ્તવિક રીતે મોટાભાગના જાવાસ્ક્રિપ્ટ સાધનો જેનો તમે ડેવલપમેન્ટ માટે ઉપયોગ કરવા માંગો છો તે Node.js ની જરૂરિયાત ધરાવશે.
 
 </Note>
 
-## Using React for an entire subroute of your existing website {/*using-react-for-an-entire-subroute-of-your-existing-website*/}
+## તમારી હાલની વેબસાઇટના સંપૂર્ણ સબરૂટ (subroute) માટે React નો ઉપયોગ કરવો {/*using-react-for-an-entire-subroute-of-your-existing-website*/}
 
-Let's say you have an existing web app at `example.com` built with another server technology (like Rails), and you want to implement all routes starting with `example.com/some-app/` fully with React.
+ધારો કે તમારી પાસે `example.com` પર એક વેબ એપ્લિકેશન છે જે બીજી સર્વર ટેક્નોલોજીથી (જેમ કે Rails થી), બનેલું છે, અને તમે `example.com/some-app/` થી શરૂ થતા તમામ રૂટ્સને સંપૂર્ણપણે React સાથે અમલમાં મૂકવા માંગો છો.
 
-Here's how we recommend to set it up:
+તેને સેટ કરવા માટે અમે અહીં ભલામણ કરીએ છીએ:
+1. **React-આધારિત ફ્રેમવર્કનો ઉપયોગ કરીને તમારી એપ્લિકેશનનો React ભાગ બનાવો**(/learn/start-a-new-react-project).
+2. **તમારા ફ્રેમવર્કના કન્ફિગરેશનમાં `/some-app` ને base path તરીકે સ્પષ્ટ કરો** (અહીં કેવી રીતે કરવું તે છે: [Next.js](https://nextjs.org/docs/app/api-reference/config/next-config-js/basePath), [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
+3. **તમારા સર્વર અથવા પ્રોક્સીને એવી રીતે ગોઠવો** કે જેથી કરીને `/some-app/` હેઠળની તમામ વિનંતીઓ (requests) તમારી React એપ્લિકેશન દ્વારા હેન્ડલ કરવામાં આવે.
 
-1. **Build the React part of your app** using one of the [React-based frameworks](/learn/start-a-new-react-project).
-2. **Specify `/some-app` as the *base path*** in your framework's configuration (here's how: [Next.js](https://nextjs.org/docs/app/api-reference/config/next-config-js/basePath), [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
-3. **Configure your server or a proxy** so that all requests under `/some-app/` are handled by your React app.
+આ સુનિશ્ચિત કરે છે કે તમારી એપ્લિકેશનનો React ભાગ તે ફ્રેમવર્કમાં રહેલી [શ્રેષ્ઠ પદ્ધતિઓનો લાભ મેળવી શકે](/learn/start-a-new-react-project#can-i-use-react-without-a-framework).
 
-This ensures the React part of your app can [benefit from the best practices](/learn/start-a-new-react-project#can-i-use-react-without-a-framework) baked into those frameworks.
+ઘણા React-આધારિત ફ્રેમવર્ક ફુલ-સ્ટેક હોય છે અને તમારી React એપ્લિકેશનને સર્વરનો લાભ લેવા દે છે. જો કે, જો તમે સર્વર પર જાવાસ્ક્રિપ્ટ ચલાવી શકતા નથી અથવા ચલાવવા માંગતા નથી, તો પણ તમે તે જ અભિગમનો ઉપયોગ કરી શકો છો. તે કિસ્સામાં, તેના બદલે `/some-app/` પર HTML/CSS/JS નો export ([`next export` output](https://nextjs.org/docs/advanced-features/static-html-export) for Next.js, default for Gatsby) સર્વ (serve) કરો.
 
-Many React-based frameworks are full-stack and let your React app take advantage of the server. However, you can use the same approach even if you can't or don't want to run JavaScript on the server. In that case, serve the HTML/CSS/JS export ([`next export` output](https://nextjs.org/docs/advanced-features/static-html-export) for Next.js, default for Gatsby) at `/some-app/` instead.
+## તમારા હાલના પેજના એક ભાગ માટે React નો ઉપયોગ કરવો {/*using-react-for-a-part-of-your-existing-page*/}
 
-## Using React for a part of your existing page {/*using-react-for-a-part-of-your-existing-page*/}
+ધારો કે તમારી પાસે બીજી ટેક્નોલોજીથી બનેલું હાલનું પેજ છે (કાં તો સર્વર જેમ કે Rails અથવા ક્લાયન્ટ જેમ કે Backbone) થી બનેલું, અને તમે તે પેજ પર ક્યાંક ઇન્ટરેક્ટિવ React કમ્પોનેન્ટ્સ રેન્ડર કરવા માંગો છો. React ને એકીકૃત (integrate) કરવાની આ એક સામાન્ય રીત છે -- હકીકતમાં, Meta પર ઘણા વર્ષો સુધી React નો મોટાભાગનો ઉપયોગ આ રીતે જ થતો હતો!
 
-Let's say you have an existing page built with another technology (either a server one like Rails, or a client one like Backbone), and you want to render interactive React components somewhere on that page. That's a common way to integrate React--in fact, it's how most React usage looked at Meta for many years!
+તમે આ બે સ્ટેપમાં કરી શકો છો:
 
-You can do this in two steps:
+1. **એક જાવાસ્ક્રિપ્ટ એન્વાયર્નમેન્ટ સેટ કરો** જે તમને JSX સિન્ટેક્સ વાપરવા દે, તમારા કોડને [`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) / [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) સિન્ટેક્સ સાથે મોડ્યુલોમાં વિભાજીત કરવા દે, અને [`npm`](https://www.npmjs.com/) પેકેજ રજિસ્ટ્રીમાંથી પેકેજો (ઉદાહરણ તરીકે, React) નો ઉપયોગ કરવા દે.
+2. **તમારા React કમ્પોનેન્ટ્સને રેન્ડર કરો** એ પેજમાં કે જ્યાં તમે તેમને જોવા માંગો છો.
 
-1. **Set up a JavaScript environment** that lets you use the [JSX syntax](/learn/writing-markup-with-jsx), split your code into modules with the [`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) / [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) syntax, and use packages (for example, React) from the [npm](https://www.npmjs.com/) package registry.
-2. **Render your React components** where you want to see them on the page.
+ચોક્કસ અભિગમ તમારા હાલના પેજ સેટઅપ પર આધાર રાખે છે, તો ચાલો અમુક વિગતો જોઈએ.
 
-The exact approach depends on your existing page setup, so let's walk through some details.
+### સ્ટેપ 1: મોડ્યુલર જાવાસ્ક્રિપ્ટ એન્વાયર્નમેન્ટ સેટઅપ કરો {/*step-1-set-up-a-modular-javascript-environment*/}
 
-### Step 1: Set up a modular JavaScript environment {/*step-1-set-up-a-modular-javascript-environment*/}
+મોડ્યુલર જાવાસ્ક્રિપ્ટ એન્વાયર્નમેન્ટ તમને તમારા React કમ્પોનેન્ટ્સને એક જ ફાઇલમાં બધો કોડ લખવાને બદલે વ્યક્તિગત ફાઇલોમાં લખવા દે છે. તે તમને [`npm`](https://www.npmjs.com) રજિસ્ટ્રી પર અન્ય ડેવલપર્સ દ્વારા પ્રકાશિત અદ્ભુત પેકેજોનો ઉપયોગ કરવાની મંજૂરી પણ આપે છે -- જેમાં React નો પણ સમાવેશ થાય છે! તમે આ કેવી રીતે કરશો તે તમારા હાલના સેટઅપ પર આધારિત છે:
 
-A modular JavaScript environment lets you write your React components in individual files, as opposed to writing all of your code in a single file. It also lets you use all the wonderful packages published by other developers on the [npm](https://www.npmjs.com/) registry--including React itself! How you do this depends on your existing setup:
+* **જો તમારી એપ્લિકેશન `import` સ્ટેટમેન્ટનો ઉપયોગ કરનારી ફાઇલોમાં પહેલેથી જ વિભાજિત છે,** તો તમારી પાસે જે સેટઅપ છે તેનો જ ઉપયોગ કરવાનો પ્રયાસ કરો. તપાસો કે તમારા JS કોડમાં `<div />` લખવાથી સિન્ટેક્સ એરર આવે છે કે નહીં. જો તે સિન્ટેક્સ એરરનું કારણ બને છે, તો તમારે JSX નો ઉપયોગ કરવા માટે [`Babel સાથે તમારા JavaScript કોડને ટ્રાન્સફોર્મ કરવાની`](https://babeljs.io/setup) અને [`Babel React preset`](https://babeljs.io/docs/babel-preset-react) સક્ષમ કરવાની જરૂર પડી શકે છે.
 
-* **If your app is already split into files that use `import` statements,** try to use the setup you already have. Check whether writing `<div />` in your JS code causes a syntax error. If it causes a syntax error, you might need to [transform your JavaScript code with Babel](https://babeljs.io/setup), and enable the [Babel React preset](https://babeljs.io/docs/babel-preset-react) to use JSX.
+* **જો તમારી એપ્લિકેશન પાસે JavaScript મોડ્યુલો કમ્પાઇલ કરવા માટે હાલનું સેટઅપ નથી, તો તેને [`Vite`](https://github.com/vitejs/awesome-vite#integrations-with-backends) દ્વારા સેટઅપ કરો. Vite સમુદાય Rails, Django, અને Laravel સહિત બેકએન્ડ ફ્રેમવર્ક સાથે [`ઘણા ઇન્ટિગ્રેશન જાળવે છે`](https://github.com/vitejs/awesome-vite#integrations-with-backends). જો તમારું બેકએન્ડ ફ્રેમવર્ક લિસ્ટમાં નથી, તો તમારા બેકએન્ડ સાથે Vite બિલ્ડ્સને મેન્યુઅલી ઇન્ટિગ્રેટ કરવા માટે [`આ માર્ગદર્શિકાને અનુસરો`](https://vite.dev/guide/backend-integration.html).
 
-* **If your app doesn't have an existing setup for compiling JavaScript modules,** set it up with [Vite](https://vite.dev/). The Vite community maintains [many integrations with backend frameworks](https://github.com/vitejs/awesome-vite#integrations-with-backends), including Rails, Django, and Laravel. If your backend framework is not listed, [follow this guide](https://vite.dev/guide/backend-integration.html) to manually integrate Vite builds with your backend.
-
-To check whether your setup works, run this command in your project folder:
+તમારું સેટઅપ કામ કરે છે કે નહીં તે તપાસવા માટે, તમારા પ્રોજેક્ટ ફોલ્ડરમાં આ આદેશ (command) ચલાવો:
 
 <TerminalBlock>
 npm install react react-dom
 </TerminalBlock>
 
-Then add these lines of code at the top of your main JavaScript file (it might be called `index.js` or `main.js`):
+પછી તમારી મુખ્ય JavaScript ફાઇલની ટોચ પર કોડની આ લાઈનો ઉમેરો (તેને `index.js` અથવા `main.js` કહી શકાય):
 
 <Sandpack>
 
@@ -81,11 +80,10 @@ root.render(<h1>Hello, world</h1>);
 
 </Sandpack>
 
-If the entire content of your page was replaced by a "Hello, world!", everything worked! Keep reading.
+જો તમારા પેજની સમગ્ર સામગ્રી "Hello, world!" દ્વારા બદલવામાં આવી હતી, તો બધું કામ કરી ગયું! આગળ વાંચતા રહો.
 
 <Note>
-
-Integrating a modular JavaScript environment into an existing project for the first time can feel intimidating, but it's worth it! If you get stuck, try our [community resources](/community) or the [Vite Chat](https://chat.vite.dev/).
+હાલના પ્રોજેક્ટમાં પ્રથમ વખત મોડ્યુલર JavaScript એન્વાયર્નમેન્ટને એકીકૃત કરવું ભયજનક (intimidating) લાગી શકે છે પરંતુ તે યોગ્ય છે! જો તમે અટવાઈ જાઓ, તો અમારા [`સમુદાય સંસાધનો`](/community) અથવા [`Vite Chat`](https://chat.vite.dev/) અજમાવી જુઓ.
 
 </Note>
 
