@@ -1,5 +1,5 @@
 ---
-title: Add React to an Existing Project
+title: હાલના પ્રોજેક્ટમાં React ઉમેરો
 ---
 
 <Intro>
@@ -16,7 +16,7 @@ title: Add React to an Existing Project
 
 ## તમારી હાલની વેબસાઇટના સંપૂર્ણ સબરૂટ (subroute) માટે React નો ઉપયોગ કરવો {/*using-react-for-an-entire-subroute-of-your-existing-website*/}
 
-ધારો કે તમારી પાસે `example.com` પર એક વેબ એપ્લિકેશન છે જે બીજી સર્વર ટેક્નોલોજીથી (જેમ કે Rails થી), બનેલું છે, અને તમે `example.com/some-app/` થી શરૂ થતા તમામ રૂટ્સને સંપૂર્ણપણે React સાથે અમલમાં મૂકવા માંગો છો.
+ધારો કે તમારી પાસે `example.com` પર એક વેબ એપ્લિકેશન છે જે બીજી સર્વર ટેક્નોલોજીથી (જેમ કે Rails થી), બનેલું છે, અને તમે `example.com/some-app/` થી શરૂ થતા તમામ રૂટ્સને સંપૂર્ણપણે React માં અમલ કરવા માંગો છો.
 
 તેને સેટ કરવા માટે અમે અહીં ભલામણ કરીએ છીએ:
 1. **React-આધારિત ફ્રેમવર્કનો ઉપયોગ કરીને તમારી એપ્લિકેશનનો React ભાગ બનાવો**(/learn/start-a-new-react-project).
@@ -42,9 +42,9 @@ title: Add React to an Existing Project
 
 મોડ્યુલર જાવાસ્ક્રિપ્ટ એન્વાયર્નમેન્ટ તમને તમારા React કમ્પોનેન્ટ્સને એક જ ફાઇલમાં બધો કોડ લખવાને બદલે વ્યક્તિગત ફાઇલોમાં લખવા દે છે. તે તમને [`npm`](https://www.npmjs.com) રજિસ્ટ્રી પર અન્ય ડેવલપર્સ દ્વારા પ્રકાશિત અદ્ભુત પેકેજોનો ઉપયોગ કરવાની મંજૂરી પણ આપે છે -- જેમાં React નો પણ સમાવેશ થાય છે! તમે આ કેવી રીતે કરશો તે તમારા હાલના સેટઅપ પર આધારિત છે:
 
-* **જો તમારી એપ્લિકેશન `import` સ્ટેટમેન્ટનો ઉપયોગ કરનારી ફાઇલોમાં પહેલેથી જ વિભાજિત છે,** તો તમારી પાસે જે સેટઅપ છે તેનો જ ઉપયોગ કરવાનો પ્રયાસ કરો. તપાસો કે તમારા JS કોડમાં `<div />` લખવાથી સિન્ટેક્સ એરર આવે છે કે નહીં. જો તે સિન્ટેક્સ એરરનું કારણ બને છે, તો તમારે JSX નો ઉપયોગ કરવા માટે [`Babel સાથે તમારા JavaScript કોડને ટ્રાન્સફોર્મ કરવાની`](https://babeljs.io/setup) અને [`Babel React preset`](https://babeljs.io/docs/babel-preset-react) સક્ષમ કરવાની જરૂર પડી શકે છે.
+* **જો તમારી એપ્લિકેશન `import` સ્ટેટમેન્ટનો ઉપયોગ કરનારી ફાઇલોમાં પહેલેથી જ વિભાજિત છે,** તો તમારી પાસે જે સેટઅપ છે તેનો જ ઉપયોગ કરવાનો પ્રયાસ કરો. તપાસો કે તમારા JS કોડમાં `<div />` લખવાથી સિન્ટેક્સ એરર આવે છે કે નહીં. જો તે સિન્ટેક્સ એરરનું કારણ બને છે, તો તમારે JSX નો ઉપયોગ કરવા માટે [`Babel સાથે તમારા જાવાસ્ક્રિપ્ટ કોડને ટ્રાન્સફોર્મ કરવાની`](https://babeljs.io/setup) અને [`Babel React preset`](https://babeljs.io/docs/babel-preset-react) સક્ષમ કરવાની જરૂર પડી શકે છે.
 
-* **જો તમારી એપ્લિકેશન પાસે JavaScript મોડ્યુલો કમ્પાઇલ કરવા માટે હાલનું સેટઅપ નથી, તો તેને [`Vite`](https://github.com/vitejs/awesome-vite#integrations-with-backends) દ્વારા સેટઅપ કરો. Vite સમુદાય Rails, Django, અને Laravel સહિત બેકએન્ડ ફ્રેમવર્ક સાથે [`ઘણા ઇન્ટિગ્રેશન જાળવે છે`](https://github.com/vitejs/awesome-vite#integrations-with-backends). જો તમારું બેકએન્ડ ફ્રેમવર્ક લિસ્ટમાં નથી, તો તમારા બેકએન્ડ સાથે Vite બિલ્ડ્સને મેન્યુઅલી ઇન્ટિગ્રેટ કરવા માટે [`આ માર્ગદર્શિકાને અનુસરો`](https://vite.dev/guide/backend-integration.html).
+* **જો તમારી એપ્લિકેશન પાસે જાવાસ્ક્રિપ્ટ મોડ્યુલો કમ્પાઇલ કરવા માટે હાલનું સેટઅપ નથી, તો તેને [`Vite`](https://github.com/vitejs/awesome-vite#integrations-with-backends) દ્વારા સેટઅપ કરો. Vite સમુદાય Rails, Django, અને Laravel સહિત બેકએન્ડ ફ્રેમવર્ક સાથે [`ઘણા ઇન્ટિગ્રેશન જાળવે છે`](https://github.com/vitejs/awesome-vite#integrations-with-backends). જો તમારું બેકએન્ડ ફ્રેમવર્ક લિસ્ટમાં નથી, તો તમારા બેકએન્ડ સાથે Vite બિલ્ડ્સને જાતે ઇન્ટિગ્રેટ કરવા માટે [`આ માર્ગદર્શિકાને અનુસરો`](https://vite.dev/guide/backend-integration.html).
 
 તમારું સેટઅપ કામ કરે છે કે નહીં તે તપાસવા માટે, તમારા પ્રોજેક્ટ ફોલ્ડરમાં આ આદેશ (command) ચલાવો:
 
@@ -52,7 +52,7 @@ title: Add React to an Existing Project
 npm install react react-dom
 </TerminalBlock>
 
-પછી તમારી મુખ્ય JavaScript ફાઇલની ટોચ પર કોડની આ લાઈનો ઉમેરો (તેને `index.js` અથવા `main.js` કહી શકાય):
+પછી તમારી મુખ્ય જાવાસ્ક્રિપ્ટ ફાઇલની ટોચ પર કોડની આ લાઈનો ઉમેરો (તેને `index.js` અથવા `main.js` કહી શકાય):
 
 <Sandpack>
 
