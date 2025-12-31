@@ -87,9 +87,9 @@ root.render(<h1>Hello, world</h1>);
 
 </Note>
 
-### Step 2: Render React components anywhere on the page {/*step-2-render-react-components-anywhere-on-the-page*/}
+### સ્ટેપ 2: પેજ પર ગમે ત્યાં React કમ્પોનેન્ટ્સ રેન્ડર કરો {/*step-2-render-react-components-anywhere-on-the-page*/}
 
-In the previous step, you put this code at the top of your main file:
+અગાઉના સ્ટેપમાં, તમે તમારી મુખ્ય ફાઇલની ટોચ પર આ કોડ મૂક્યો હતો:
 
 ```js
 import { createRoot } from 'react-dom/client';
@@ -101,12 +101,11 @@ document.body.innerHTML = '<div id="app"></div>';
 const root = createRoot(document.getElementById('app'));
 root.render(<h1>Hello, world</h1>);
 ```
+અલબત્ત, તમે વાસ્તવમાં હાલની HTML સામગ્રીને સાફ (clear) કરવા માંગતા નથી!
 
-Of course, you don't actually want to clear the existing HTML content!
+આ કોડ કાઢી નાખો.
 
-Delete this code.
-
-Instead, you probably want to render your React components in specific places in your HTML. Open your HTML page (or the server templates that generate it) and add a unique [`id`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id) attribute to any tag, for example:
+તેના બદલે, તમે કદાચ તમારા React કમ્પોનેન્ટ્સને તમારા HTML માં ચોક્કસ જગ્યાએ રેન્ડર કરવા માંગો છો. તમારું HTML પેજ ખોલો (અથવા સર્વર ટેમ્પલેટ્સ જે તેને જનરેટ કરે છે) અને કોઈપણ ટેગમાં એક યુનિક [`id`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id) એટ્રિબ્યુટ ઉમેરો, ઉદાહરણ તરીકે:
 
 ```html
 <!-- ... somewhere in your html ... -->
@@ -114,7 +113,7 @@ Instead, you probably want to render your React components in specific places in
 <!-- ... more html ... -->
 ```
 
-This lets you find that HTML element with [`document.getElementById`](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) and pass it to [`createRoot`](/reference/react-dom/client/createRoot) so that you can render your own React component inside:
+આ તમને [`document.getElementById`](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) સાથે તે HTML એલીમેન્ટ શોધવા દે છે અને તેને [`createRoot`](/reference/react-dom/client/createRoot) માં પાસ કરવા દે છે જેથી તમે અંદર તમારો પોતાનો React કમ્પોનેન્ટ રેન્ડર કરી શકો:
 
 <Sandpack>
 
@@ -145,10 +144,14 @@ root.render(<NavigationBar />);
 
 </Sandpack>
 
-Notice how the original HTML content from `index.html` is preserved, but your own `NavigationBar` React component now appears inside the `<nav id="navigation">` from your HTML. Read the [`createRoot` usage documentation](/reference/react-dom/client/createRoot#rendering-a-page-partially-built-with-react) to learn more about rendering React components inside an existing HTML page.
+નોંધ કરો કે `index.html` માંથી મૂળ HTML સામગ્રી કેવી રીતે સચવાય છે, પરંતુ તમારો પોતાનો NavigationBar React કમ્પોનેન્ટ હવે તમારા HTML માંથી <nav id="navigation"> ની અંદર દેખાય છે. હાલના HTML પેજ ની અંદર React કમ્પોનેન્ટ્સને રેન્ડર કરવા વિશે વધુ જાણવા માટે [`createRoot ઉપયોગ દસ્તાવેજીકરણ`](/reference/react-dom/client/createRoot#rendering-a-page-partially-built-with-react) વાંચો.
 
-When you adopt React in an existing project, it's common to start with small interactive components (like buttons), and then gradually keep "moving upwards" until eventually your entire page is built with React. If you ever reach that point, we recommend migrating to [a React framework](/learn/start-a-new-react-project) right after to get the most out of React.
+જ્યારે તમે હાલના પ્રોજેક્ટમાં React અપનાવો છો, ત્યારે નાના ઇન્ટરેક્ટિવ કમ્પોનેન્ટ્સ (જેમ કે બટનો) થી પ્રારંભ કરવું સામાન્ય છે, અને પછી ધીમે ધીમે "ઉપર તરફ જતા રહેવું" (moving upwards) જ્યાં સુધી આખરે તમારું આખું પેજ React સાથે ન બને. જો તમે ક્યારેય તે બિંદુએ પહોંચો છો, તો અમે React નો સૌથી વધુ લાભ મેળવવા માટે તરત જ React ફ્રેમવર્ક પર સ્થાનાંતરિત થવાની ભલામણ કરીએ છીએ.
+
+જ્યારે તમે હાલના પ્રોજેક્ટમાં React અપનાવો છો, ત્યારે નાના ઇન્ટરેક્ટિવ કમ્પોનેન્ટ્સ (જેમ કે બટનો) થી પ્રારંભ કરવું સામાન્ય છે, અને પછી ધીમે ધીમે ઊંચે ચડવું (moving upwards) જ્યાં સુધી આખરે તમારું આખું પેજ React થી બનેલું હોય. જો તમે ક્યારેય તે બિંદુએ પહોંચો છો, તો અમે React નો સૌથી વધુ લાભ મેળવવા માટે તરત જ [React ફ્રેમવર્ક](/learn/start-a-new-react-project) પર સ્થાનાંતરિત થવાની ભલામણ કરીએ છીએ.
+
+## હાલની નેટિવ મોબાઇલ એપ્લિકેશનમાં React Native નો ઉપયોગ કરવો {/*using-react-native-in-an-existing-native-mobile-app*/}
 
 ## Using React Native in an existing native mobile app {/*using-react-native-in-an-existing-native-mobile-app*/}
 
-[React Native](https://reactnative.dev/) can also be integrated into existing native apps incrementally. If you have an existing native app for Android (Java or Kotlin) or iOS (Objective-C or Swift), [follow this guide](https://reactnative.dev/docs/integration-with-existing-apps) to add a React Native screen to it.
+[React Native](https://reactnative.dev/) ને હાલની નેટિવ એપ્લિકેશન્સમાં પણ ક્રમશઃ (incrementally) એકીકૃત કરી શકાય છે. જો તમારી પાસે Android (Java અથવા Kotlin) અથવા iOS (Objective-C અથવા Swift) માટે હાલની નેટિવ એપ્લિકેશન છે, તો તેમાં React Native સ્ક્રીન ઉમેરવા માટે [આ માર્ગદર્શિકાને અનુસરો](https://reactnative.dev/docs/integration-with-existing-apps).
