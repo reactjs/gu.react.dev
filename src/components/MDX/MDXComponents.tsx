@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
@@ -37,6 +44,7 @@ import {finishedTranslations} from 'utils/finishedTranslations';
 
 import ErrorDecoder from './ErrorDecoder';
 import {IconCanary} from '../Icon/IconCanary';
+import {IconExperimental} from 'components/Icon/IconExperimental';
 
 function CodeStep({children, step}: {children: any; step: number}) {
   return (
@@ -98,6 +106,10 @@ const Canary = ({children}: {children: React.ReactNode}) => (
   <ExpandableCallout type="canary">{children}</ExpandableCallout>
 );
 
+const Experimental = ({children}: {children: React.ReactNode}) => (
+  <ExpandableCallout type="experimental">{children}</ExpandableCallout>
+);
+
 const NextMajor = ({children}: {children: React.ReactNode}) => (
   <ExpandableCallout type="major">{children}</ExpandableCallout>
 );
@@ -117,6 +129,20 @@ const CanaryBadge = ({title}: {title: string}) => (
       className={'inline me-1 mb-0.5 text-sm text-gray-60 dark:text-gray-10'}
     />
     Canary only
+  </span>
+);
+
+const ExperimentalBadge = ({title}: {title: string}) => (
+  <span
+    title={title}
+    className={
+      'text-base font-display px-1 py-0.5 font-bold bg-gray-10 dark:bg-gray-60 text-gray-60 dark:text-gray-10 rounded'
+    }>
+    <IconExperimental
+      size="s"
+      className={'inline me-1 mb-0.5 text-sm text-gray-60 dark:text-gray-10'}
+    />
+    Experimental only
   </span>
 );
 
@@ -163,16 +189,16 @@ function LearnMore({
       <section className="p-8 mt-16 mb-16 flex flex-row shadow-inner-border dark:shadow-inner-border-dark justify-between items-center bg-card dark:bg-card-dark rounded-2xl">
         <div className="flex-col">
           <h2 className="text-primary font-display dark:text-primary-dark font-bold text-2xl leading-tight">
-            Ready to learn this topic?
+            આ વિષય શીખવા માટે તૈયાર છો?
           </h2>
           {children}
           {path ? (
             <ButtonLink
               className="mt-1"
-              label="Read More"
+              label="વધુ વાંચો"
               href={path}
               type="primary">
-              Read More
+              વધુ વાંચો
               <IconNavArrow displayDirection="end" className="inline ms-1" />
             </ButtonLink>
           ) : null}
@@ -223,7 +249,7 @@ function YouWillLearn({
   children: any;
   isChapter?: boolean;
 }) {
-  let title = isChapter ? 'In this chapter' : 'You will learn';
+  let title = isChapter ? 'આ પ્રકરણમાં' : 'તમે શીખી શકશો';
   return <SimpleCallout title={title}>{children}</SimpleCallout>;
 }
 
@@ -336,7 +362,7 @@ function IllustrationBlock({
     </figure>
   ));
   return (
-    <IllustrationContext.Provider value={isInBlockTrue}>
+    <IllustrationContext value={isInBlockTrue}>
       <div className="relative group before:absolute before:-inset-y-16 before:inset-x-0 my-16 mx-0 2xl:mx-auto max-w-4xl 2xl:max-w-6xl">
         {sequential ? (
           <ol className="mdx-illustration-block flex">
@@ -351,7 +377,7 @@ function IllustrationBlock({
         )}
         <AuthorCredit author={author} authorLink={authorLink} />
       </div>
-    </IllustrationContext.Provider>
+    </IllustrationContext>
   );
 }
 
@@ -508,6 +534,8 @@ export const MDXComponents = {
   MathI,
   Note,
   Canary,
+  Experimental,
+  ExperimentalBadge,
   CanaryBadge,
   NextMajor,
   NextMajorBadge,
