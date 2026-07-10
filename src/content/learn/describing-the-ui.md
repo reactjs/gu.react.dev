@@ -526,15 +526,9 @@ export default function TeaSet() {
 
 ## તમારા UI ને ટ્રી તરીકે સમજવું {/*your-ui-as-a-tree*/}
 
-<<<<<<< HEAD
 React કમ્પોનેન્ટ્સ અને મોડ્યૂલ્સ વચ્ચેના સંબંધોને દર્શાવવા માટે ટ્રીનો ઉપયોગ કરે છે. 
 
 એક React રેન્ડર ટ્રી એ કમ્પોનેન્ટ્સના parent અને child સંબંધોને પ્રસ્તુત કરે છે. 
-=======
-React uses trees to model the relationships between components and modules.
-
-A React render tree is a representation of the parent and child relationship between components.
->>>>>>> 2639f369946f763fff9a2572b0d7c4b9e2f83ebd
 
 <Diagram name="generic_render_tree" height={250} width={500} alt="A tree graph with five nodes, with each node representing a component. The root node is located at the top the tree graph and is labelled 'Root Component'. It has two arrows extending down to two nodes labelled 'Component A' and 'Component C'. Each of the arrows is labelled with 'renders'. 'Component A' has a single 'renders' arrow to a node labelled 'Component B'. 'Component C' has a single 'renders' arrow to a node labelled 'Component D'.">
 
@@ -544,11 +538,7 @@ A React render tree is a representation of the parent and child relationship bet
 
 ટ્રીના ટોચ પર, રુટ કમ્પોનેન્ટના નજીક આવેલી કમ્પોનેન્ટ્સને ટોપ-લેવલ કમ્પોનેન્ટ્સ માનવામાં આવે છે. અને જે કમ્પોનેન્ટ્સના child કમ્પોનેન્ટ્સ નથી, તે લીફ કમ્પોનેન્ટ્સ તરીકે ઓળખાય છે. કમ્પોનેન્ટ્સના આ વિભાજનને ડેટા પ્રવાહ અને રેન્ડરિંગ પ્રદર્શન સમજવામાં ઉપયોગી માનવામાં આવે છે.
 
-<<<<<<< HEAD
 જાવાસ્ક્રિપ્ટ મૉડ્યુલ્સ વચ્ચેના સંબંધને Module Dependency Tree તરીકે મૉડેલ કરવું, એ પણ તમારા એપ્લિકેશનને સમજવા માટે એક ઉપયોગી રીત છે.
-=======
-Modelling the relationship between JavaScript modules is another useful way to understand your app. We refer to it as a module dependency tree.
->>>>>>> 2639f369946f763fff9a2572b0d7c4b9e2f83ebd
 
 <Diagram name="generic_dependency_tree" height={250} width={500} alt="પાંચ ગાંઠો સાથેનો એક ટ્રી ગ્રાફ. દરેક નોડ જાવાસ્ક્રિપ્ટ મોડ્યુલનું પ્રતિનિધિત્વ કરે છે. ટોપ-મોસ્ટ નોડ 'RootModule.js' લેબલ થયેલ છે. તેમાં ગાંઠો સુધી વિસ્તરેલા ત્રણ તીર છે: 'ModuleA.js', 'ModuleB.js', અને 'ModuleC.js'. દરેક તીરને 'imports' તરીકે લેબલ કરવામાં આવે છે. 'ModuleC.js' નોડમાં એક જ 'imports' તીર હોય છે જે 'ModuleD.js' લેબલવાળા નોડ તરફ નિર્દેશ કરે છે.">
 
@@ -556,11 +546,7 @@ Module Dependency ટ્રીનું ઉદાહરણ.
 
 </Diagram>
 
-<<<<<<< HEAD
 Dependency Tree એ મોટાભાગના બિલ્ડ ટૂલ્સ દ્વારા ઉપયોગમાં લેવાય છે, જે ક્લાયન્ટ માટે ડાઉનલોડ અને રેન્ડર કરવા માટે તમામ સંબંધિત JavaScript કોડને બંડલ કરે છે. મોટા બંડલ કદને કારણે React એપ્લિકેશન્સમાં યુઝર અનુભવ પર નકારાત્મક અસર પડે છે. Module Dependency ટ્રીને સમજવાથી આવા સમસ્યાઓ ને ડિબગ કરવામાં મદદ મળે છે.
-=======
-A dependency tree is often used by build tools to bundle all the relevant JavaScript code for the client to download and render. A large bundle size regresses user experience for React apps. Understanding the module dependency tree is helpful to debug such issues.
->>>>>>> 2639f369946f763fff9a2572b0d7c4b9e2f83ebd
 
 <LearnMore path="/learn/understanding-your-ui-as-a-tree">
 
